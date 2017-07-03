@@ -11,6 +11,7 @@ EStyleSheet.build({
   $facebookColor: '#3C539A',
   $googleColor: '#DB402C',
   $white: '#fff',
+  $textColor: '#373e52',
 
   // toggle to see where the components are laid out
   // outline: 1,
