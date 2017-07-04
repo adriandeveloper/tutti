@@ -8,7 +8,7 @@ const LoginBtn = () => (
     style={styles.loginContainer}
   >
     <View style={styles.textContainer}>
-      <Text style={styles.textFont}>Log In!</Text>
+      <Text style={styles.loginTextFont}>Log In!</Text>
     </View>
   </TouchableOpacity>
 );

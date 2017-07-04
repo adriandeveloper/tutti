@@ -18,6 +18,14 @@ export default EStyleSheet.create({
     top: 274,
     width: 237,
   },
+  loginTextFont: {
+    color: '$white',
+    fontFamily: 'Open Sans',
+    fontSize: 29,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    bottom: 10,
+  },
   textContainer: {
     marginTop: 18,
   },
