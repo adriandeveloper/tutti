@@ -5,8 +5,8 @@ import styles from './styles';
 class Header extends Component {
   render() {
     return (
-      <View>
-        <View style={styles.titleContainer}>
+      <View style={styles.container}>
+        <View style={styles.textTitleContainer}>
           <Text style={styles.titleFont}>tutti</Text>
         </View>
         <View style={styles.gettingStartedContainer}>
