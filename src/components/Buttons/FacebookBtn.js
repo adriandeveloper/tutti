@@ -4,14 +4,18 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
 const FacebookBtn = () => (
-  <TouchableOpacity
-    resizeMode='contain'
+  <View
     style={styles.container}
   >
-    <View style={styles.textContainer}>
-      <Text style={styles.textFont}>Login with Facebook</Text>
-    </View>
-  </TouchableOpacity>
+    <TouchableOpacity
+      resizeMode='contain'
+    >
+        <View style={styles.textContainer}>
+          <Text style={styles.textFont}>Login with Facebook</Text>
+        </View>
+      </TouchableOpacity>
+
+  </View>
 );
 
 export default FacebookBtn;

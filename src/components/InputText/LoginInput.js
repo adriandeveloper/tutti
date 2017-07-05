@@ -4,21 +4,22 @@ import TextField from 'react-native-md-textinput';
 import styles from './styles';
 
 const LoginInput = () => (
-  <ScrollView>
+  <ScrollView style={styles.inputFieldContainer}>
     <View>
       <TextField
-        style={styles.textInput}
-        label={'email'}
         highlightColor={'#FF456E'}
+        label={'email'}
+        style={styles.textInput}
       />
 
     </View>
 
     <View>
       <TextField
-        style-={styles.textInput}
-        label={'password'}
         highlightColor={'#FF456E'}
+        label={'password'}
+        secureTextEntry
+        style-={styles.textInput}
       />
     </View>
   </ScrollView>
