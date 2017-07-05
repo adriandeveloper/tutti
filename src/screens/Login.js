@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+// import { View } from 'react-native';
+import { Container } from '../components/Containers';
 import { Header } from '../components/Header';
 import { FacebookBtn, LoginBtn } from '../components/Buttons';
+import { Footer } from '../components/Footer';
 
 class Login extends Component {
   render() {
     return (
-      <View>
+      <Container >
         <Header />
         <LoginBtn />
         <FacebookBtn />
-      </View>
+        <Footer />
+      </Container>
     );
   }
 }

@@ -5,8 +5,6 @@ export default EStyleSheet.create({
     backgroundColor: '$facebookColor',
     borderRadius: 3,
     height: 54,
-    left: 69,
-    top: 324,
     width: 237,
   },
   icon: {},
@@ -14,8 +12,7 @@ export default EStyleSheet.create({
     backgroundColor: '$primaryBlue',
     borderRadius: 3,
     height: 54,
-    left: 69,
-    top: 274,
+    // top: 55,
     width: 237,
   },
   loginTextFont: {
