@@ -7,7 +7,10 @@ const LoginInput = () => (
   <ScrollView style={styles.inputFieldContainer}>
     <View>
       <TextField
+        autoCorrect={false}
+        enablesReturnKeyAutomatically
         highlightColor={'#FF456E'}
+        keyboardType={'email-address'}
         label={'email'}
         style={styles.textInput}
       />
@@ -16,6 +19,7 @@ const LoginInput = () => (
 
     <View>
       <TextField
+        enablesReturnKeyAutomatically
         highlightColor={'#FF456E'}
         label={'password'}
         secureTextEntry

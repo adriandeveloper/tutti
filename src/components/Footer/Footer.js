@@ -4,9 +4,8 @@ import styles from './styles';
 
 
 const Footer = () => (
-  <View>
+  <View style={styles.container}>
     <Text>Don't have an account? Sign up</Text>
-
   </View>
 );
 

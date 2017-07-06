@@ -1,8 +1,8 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 // import Home from './screens/Home';
-import Login from './screens/Login';
-// import SignUp from './screens/SignUp';
+// import Login from './screens/Login';
+import SignUp from './screens/SignUp';
 
 EStyleSheet.build({
   $primaryBlue: '#008AD8',
@@ -13,9 +13,10 @@ EStyleSheet.build({
   $googleColor: '#DB402C',
   $white: '#fff',
   $textColor: '#373e52',
+  $offWhite: '#fcfafa',
 
   // toggle to see where the components are laid out
   // outline: 1,
 });
 
-export default () => <Login />;
+export default () => <SignUp />;

@@ -15,10 +15,14 @@ class Login extends Component {
         <StatusBar
           translucent={false} barStyle='default'
         />
-        <Header />
+        <Header
+          headerText="Let's Get Started"
+        />
         <LoginInput />
         <LoginBtn />
-        <FacebookBtn />
+        <FacebookBtn
+          buttonText='Login with Facebook'
+        />
         <Footer />
       </Container>
     );
