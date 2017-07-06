@@ -1,8 +1,18 @@
-import React from 'react';
-import EStyleSheet from 'react-native-extended-stylesheet';
+// import React from 'react';
+// import EStyleSheet from 'react-native-extended-stylesheet';
 // import Home from './screens/Home';
 // import Login from './screens/Login';
-import SignUp from './screens/SignUp';
+// import SignUp from './screens/SignUp';
+
+import EStyleSheet from 'react-native-extended-stylesheet';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import ReduxThunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+import firebase from 'firebase';
+import reducers from './reducers';
+import Login from './screens/Login';
+
 
 EStyleSheet.build({
   $primaryBlue: '#008AD8',
@@ -19,4 +29,32 @@ EStyleSheet.build({
   // outline: 1,
 });
 
-export default () => <SignUp />;
+// export default () => <Login />;
+
+class App extends Component {
+
+  componentWillMount() {
+    const config = {
+      apiKey: 'AIzaSyBWBtQ6sCTlZCt6HM-DJnrnO__HGMdcCEc',
+      authDomain: 'tutti-chat.firebaseapp.com',
+      databaseURL: 'https://tutti-chat.firebaseio.com',
+      projectId: 'tutti-chat',
+      storageBucket: 'tutti-chat.appspot.com',
+      messagingSenderId: '819293763335'
+     };
+ firebase.initializeApp(config);
+  }
+
+
+  render() {
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+    return (
+      <Provider store={store}>
+        <Login />
+      </Provider>
+    );
+  }
+}
+
+
+export default App;

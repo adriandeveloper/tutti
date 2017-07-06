@@ -4,6 +4,7 @@ import styles from './styles';
 
 const LoginBtn = () => (
   <TouchableOpacity
+    onPress={() => console.log('puff')}
     resizeMode="contain"
     style={styles.loginContainer}
   >
