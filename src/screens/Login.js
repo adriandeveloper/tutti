@@ -6,7 +6,7 @@ import { StatusBar, View, ScrollView, TouchableOpacity, Text } from 'react-nativ
 import { Container } from '../components/Containers';
 import { Header } from '../components/Header';
 // import LoginInput from '../components/InputText/LoginInput';
-import { FacebookBtn, LoginBtn } from '../components/Buttons';
+import { FacebookBtn } from '../components/Buttons';
 import { Footer } from '../components/Footer';
 import styles from '../components/InputText/styles';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
@@ -22,9 +22,8 @@ onPasswordChange(text) {
 }
 
 onButtonPress() {
-  console.log(email);
     const { email, password } = this.props;
-    // this.props.loginUser({ email, password });
+    this.props.loginUser({ email, password });
   }
 
   render() {
@@ -64,9 +63,24 @@ onButtonPress() {
             />
           </View>
         </ScrollView>
+        {/* below if for error message */}
+        <Text style={styles.errorTextStyle}>
+          {this.props.error}
+        </Text>
+        {/* <LoginBtn /> */}
 
 
-        <LoginBtn />
+        <TouchableOpacity
+          // onPress={() => alert('puff')}
+          onPress={this.onButtonPress.bind(this)}
+          resizeMode="contain"
+          style={styles.loginContainer}
+        >
+          <View style={styles.textContainer}>
+            <Text style={styles.loginTextFont}>Log In!</Text>
+          </View>
+        </TouchableOpacity>
+
 
         <FacebookBtn
           buttonText='Login with Facebook'
@@ -78,10 +92,10 @@ onButtonPress() {
 }
 
 
-const mapStateToProps = state => ({
-    email: state.auth.email,
-    password: state.auth.password
-  });
+const mapStateToProps = ({ auth }) => {
+    const { email, password, error } = auth;
+    return { email, password, error };
+  };
 
 
   export default connect(mapStateToProps, { emailChanged, passwordChanged, loginUser })(Login);

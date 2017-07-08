@@ -3,10 +3,10 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import styles from './styles';
 
-const Footer = () => (
+const FooterSignUp = () => (
   <View style={styles.container}>
-    <Text>Don't have an account? <Text onPress={() => Actions.signupForm()}>Sign up </Text> </Text>
+    <Text> Have an account, <Text onPress={() => Actions.auth()}>Sign In</Text> </Text>
   </View>
 );
 
-export default Footer;
+export default FooterSignUp;

@@ -17,6 +17,8 @@ const SignUpForm = () => (
           highlightColor={'#FF456E'}
           label={'username'}
           style={styles.textInput}
+          value={this.state.text}
+          onChangeText={text => this.setState){ text }}
         />
       </View>
         <TextField

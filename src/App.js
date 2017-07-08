@@ -11,7 +11,7 @@ import ReduxThunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import firebase from 'firebase';
 import reducers from './reducers';
-import Login from './screens/Login';
+import Router from './Router';
 
 
 EStyleSheet.build({
@@ -50,7 +50,7 @@ class App extends Component {
     const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
     return (
       <Provider store={store}>
-        <Login />
+        <Router />
       </Provider>
     );
   }
