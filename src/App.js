@@ -1,8 +1,6 @@
 // import React from 'react';
 // import EStyleSheet from 'react-native-extended-stylesheet';
-// import Home from './screens/Home';
-// import Login from './screens/Login';
-// import SignUp from './screens/SignUp';
+// import Chat from './screens/Chat';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 import React, { Component } from 'react';
@@ -29,7 +27,7 @@ EStyleSheet.build({
   // outline: 1,
 });
 
-// export default () => <Login />;
+// export default () => <Chat />;
 
 class App extends Component {
 
