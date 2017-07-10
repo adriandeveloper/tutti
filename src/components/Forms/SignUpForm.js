@@ -18,7 +18,7 @@ const SignUpForm = () => (
           label={'username'}
           style={styles.textInput}
           value={this.state.text}
-          onChangeText={text => this.setState){ text }}
+          // onChangeText={text => this.setState){ text }}
         />
       </View>
         <TextField

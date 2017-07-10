@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import TextField from 'react-native-md-textinput';
 import React, { Component } from 'react';
-// import firebase from 'firebase';
 import { StatusBar, View, ScrollView, TouchableOpacity, Text } from 'react-native';
 import { Container } from '../components/Containers';
 import { Header } from '../components/Header';
@@ -9,7 +8,7 @@ import { Header } from '../components/Header';
 import { FacebookBtn } from '../components/Buttons';
 import { Footer } from '../components/Footer';
 import styles from '../components/InputText/styles';
-import { emailChanged, passwordChanged, loginUser } from '../actions';
+import { emailChanged, passwordChanged, loginUser } from '../actions/login/login';
 
 
 class Login extends Component {

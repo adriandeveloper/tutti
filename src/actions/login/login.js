@@ -5,18 +5,19 @@ import {
   EMAIL_CHANGED,
   PASSWORD_CHANGED,
   LOGIN_USER_SUCCESS,
-  LOGIN_USER_FAIL
+  LOGIN_USER_FAIL,
 } from './types';
 
-export const emailChanged = (text) => ({
+  export const emailChanged = (text) => ({
     type: EMAIL_CHANGED,
     payload: text
   });
 
-export const passwordChanged = (text) => ({
+  export const passwordChanged = (text) => ({
     type: PASSWORD_CHANGED,
     payload: text
   });
+
 
 //this is redux-thunk
   export const loginUser = ({ email, password }) => (dispatch) => {
@@ -25,6 +26,7 @@ export const passwordChanged = (text) => ({
         //this catch statment is if failed
         .catch(() => loginUserFail(dispatch));
     };
+
 
 //helper function below
 const loginUserFail = (dispatch) => {
