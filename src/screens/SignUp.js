@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { StatusBar, View, Text, ScrollView } from 'react-native';
+import { StatusBar, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import TextField from 'react-native-md-textinput';
 import { SignUpContainer } from '../components/Containers';
 import { Header } from '../components/Header';
@@ -8,20 +8,32 @@ import { FacebookBtn } from '../components/Buttons';
 // import { SignUpForm } from '../components/Forms';
 import FooterSignUp from '../components/Footer/FooterSignUp';
 import styles from '../components/Forms/styles';
-import { emailChangedSU, userChangedSU, passwordChangedSU } from '../actions2/signup/signup';
+import {
+  emailChangedSU,
+  userChangedSU,
+  passwordChangedSU,
+  signUpUser
+} from '../actions/signup/';
+// import LoginBtn from '../components/Buttons/LoginBtn';
+
 
 class SignUp extends Component {
 
-  onUserChangeSU(text1) {
-    this.props.userChangedSU(text1);
+  onUserChangeSU(text) {
+    this.props.userChangedSU(text);
   }
 
-  onEmailChangeSU(text1) {
-    this.props.emailChangedSU(text1);
+  onEmailChangeSU(text) {
+    this.props.emailChangedSU(text);
   }
 
-  onPasswordChangeSU(text1) {
-    this.props.passwordChangedSU(text1);
+  onPasswordChangeSU(text) {
+    this.props.passwordChangedSU(text);
+  }
+
+  onButtonPress() {
+    const { email_su, password_su } = this.props;
+    this.props.signUpUser({ email_su, password_su });
   }
 
   render() {
@@ -55,7 +67,7 @@ class SignUp extends Component {
                 label={'username'}
                 style={styles.textInput}
                 onChangeText={this.onUserChangeSU.bind(this)}
-                value={this.props.foo}
+                value={this.props.user_su}
               />
             </View>
               <TextField
@@ -65,7 +77,7 @@ class SignUp extends Component {
                 label={'email'}
                 style={styles.textInput}
                 onChangeText={this.onEmailChangeSU.bind(this)}
-                value={this.props.foo2}
+                value={this.props.email_su}
               />
             <View>
               <TextField
@@ -75,8 +87,8 @@ class SignUp extends Component {
                 highlightColor={'#FF456E'}
                 label={'password'}
                 style={styles.textInput}
-                // onChangeText={this.onPasswordChangeSU.bind(this)}
-                // value={this.props.foo3}
+                onChangeText={this.onPasswordChangeSU.bind(this)}
+                value={this.props.password_su}
               />
             </View>
             <View>
@@ -91,6 +103,16 @@ class SignUp extends Component {
           </ScrollView>
         </View>
 
+        <TouchableOpacity
+          // onPress={() => console.log('puff')}
+          onPress={this.onButtonPress.bind(this)}
+          resizeMode="contain"
+          style={styles.loginContainer}
+        >
+          <View style={styles.textContainer}>
+            <Text style={styles.loginTextFont}>Log In!</Text>
+          </View>
+        </TouchableOpacity>
 
         <FooterSignUp />
       </SignUpContainer>
@@ -98,13 +120,15 @@ class SignUp extends Component {
   }
 }
 
-const mapStateToProps = state2 => ({
-    foo: state2.sign.foo,
-    foo2: state2.sign.foo2,
-    foo3: state2.sign.foo3
+const mapStateToProps = state => ({
+    user_su: state.sign.user_su,
+    email_su: state.sign.email_su,
+    password_su: state.sign.password_su
   });
 
 export default connect(mapStateToProps, {
   emailChangedSU,
   userChangedSU,
-  passwordChangedSU })(SignUp);
+  passwordChangedSU,
+  signUpUser
+  })(SignUp);

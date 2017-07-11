@@ -8,7 +8,7 @@ import { Header } from '../components/Header';
 import { FacebookBtn } from '../components/Buttons';
 import { Footer } from '../components/Footer';
 import styles from '../components/InputText/styles';
-import { emailChanged, passwordChanged, loginUser } from '../actions/login/login';
+import { emailChanged, passwordChanged, loginUser } from '../actions/login';
 
 
 class Login extends Component {
