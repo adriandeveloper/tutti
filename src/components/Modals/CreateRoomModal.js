@@ -26,7 +26,7 @@ return (
     <Modal
       style={styles.modal}
       position={'center'}
-      ref={'modal3'}
+      ref={'modal'}
       isDisabled={this.state.isDisabled}
     >
       <View>

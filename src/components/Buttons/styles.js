@@ -55,6 +55,17 @@ export default EStyleSheet.create({
   },
   createRoomText: {
     color: '$white',
-  }
-
+  },
+  modal: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 469,
+    width: 308,
+    borderRadius: 3,
+    backgroundColor: '$white',
+  },
+  wrapper: {
+    flex: 1,
+    paddingTop: 40,
+  },
 });
