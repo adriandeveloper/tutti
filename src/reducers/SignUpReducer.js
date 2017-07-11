@@ -1,38 +1,31 @@
 import {
-  EMAILCHANGEDSU,
-  PASSWORDCHANGEDSU,
-  // LOGIN_USER_SUCCESS,
-  // LOGIN_USER_FAIL,
-  USERCHANGEDSU
-} from '../actions2/signup/types.js';
+  EMAIL_CHANGED_SU,
+  PASSWORD_CHANGED_SU,
+  USER_CHANGED_SU,
+  CREATE_USER_SU
+} from '../actions/signup/types.js';
 
-const INITIAL_STATE2 = {
-  //  email: '',
-  //  usernameSU: '',
-  //  password: '',
-  //  user: null,
-  //  error: ''
+const INITIAL_STATE = {
+   email_su: '',
+   user_su: '',
+   password_su: '',
+   user: null,
+   error: ''
  };
 
-export default (state2 = INITIAL_STATE2, action2) => {
-  console.log('Signup Page');
+export default (state = INITIAL_STATE, action) => {
+  console.log(action);
   // console.log(action2);
-  switch (action2.type) {
-    case USERCHANGEDSU:
-      return { ...state2, foo: action2.payload };
-    case EMAILCHANGEDSU:
-      return { ...state2, foo2: action2.payload };
-    case PASSWORDCHANGEDSU:
-      return { ...state2, foo3: action2.payload };
-
-      // the error:'' clears out the error message upon successful login
-    // case LOGIN_USER_SUCCESS:
-    // // using the INITIAL_STATE allows us to call it from above and clear out
-    //   return { ...state, ...INITIAL_STATE, user: action.payload };
-    //   //message for failure on login below. password: "" means clears password field
-    // case LOGIN_USER_FAIL:
-    //   return { ...state, error: 'Email and Password do not match', password: '' };
+  switch (action.type) {
+    case USER_CHANGED_SU:
+      return { ...state, user_su: action.payload };
+    case EMAIL_CHANGED_SU:
+      return { ...state, email_su: action.payload };
+    case PASSWORD_CHANGED_SU:
+      return { ...state, password_su: action.payload };
+    case CREATE_USER_SU:
+      return { ...state, username_su: action.payload };
     default:
-      return state2;
+      return state;
   }
 };

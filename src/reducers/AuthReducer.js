@@ -6,14 +6,14 @@ import {
 } from '../actions/login/types';
 
 const INITIAL_STATE = {
-  //  email: '',
-  //  password: '',
-  //  user: null,
-  //  error: ''
+   email: '',
+   password: '',
+   user: null,
+   error: ''
  };
 
 export default (state = INITIAL_STATE, action) => {
-  // console.log(action);
+  console.log(action);
   switch (action.type) {
     case EMAIL_CHANGED:
       return { ...state, email: action.payload };

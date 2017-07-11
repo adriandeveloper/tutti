@@ -1,29 +1,36 @@
-// import firebase from 'firebase';
+import firebase from 'firebase';
 // import { Actions } from 'react-native-router-flux';
 
 import {
-  EMAILCHANGEDSU,
-  PASSWORDCHANGEDSU,
-  // LOGIN_USER_SUCCESS,
-  // LOGIN_USER_FAIL,
-  USERCHANGEDSU
+  EMAIL_CHANGED_SU,
+  PASSWORD_CHANGED_SU,
+  USER_CHANGED_SU,
+  CREATE_USER_SU
+  // CREATE_USER_SU,
 } from './types';
 
-  export const emailChangedSU = (text1) => ({
-    type: EMAILCHANGEDSU,
-    payload: text1
+  export const emailChangedSU = (text) => ({
+    type: EMAIL_CHANGED_SU,
+    payload: text
   });
 
-  export const passwordChangedSU = (text1) => ({
-    type: PASSWORDCHANGEDSU,
-    payload: text1
+  export const passwordChangedSU = (text) => ({
+    type: PASSWORD_CHANGED_SU,
+    payload: text
   });
 
   // this is the action creator
-  export const userChangedSU = (text1) => ({
-    type: USERCHANGEDSU,
-    payload: text1
+  export const userChangedSU = (text) => ({
+    type: USER_CHANGED_SU,
+    payload: text
   });
+
+  export const signUpUser = ({ email_su, password_su }) => (dispatch) => {
+      firebase.auth().createUserWithEmailAndPassword(email_su, password_su)
+      .then(user => {
+        dispatch({ type: CREATE_USER_SU, payload: user });
+      });
+    };
 
 //this is redux-thunk
   // export const loginUser = ({ email, password }) => (dispatch) => {
