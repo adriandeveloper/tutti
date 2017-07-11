@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 import SearchBox from '../InputText/SearchBox';
 import styles from './styles';
 
@@ -12,7 +12,7 @@ const SearchHeader = () => (
     {/* <View style={styles.createRoomContainer}>
     </View> */}
 
-    <TouchableOpacity style={styles.createRoomContainer}>
+    {/* <TouchableOpacity style={styles.createRoomContainer}>
       <View >
         <Text style={styles.createRoomText}>Create a Room</Text>
       </View>
@@ -20,7 +20,7 @@ const SearchHeader = () => (
           <Text style={styles.plusText}>+</Text>
       </View>
 
-    </TouchableOpacity>
+    </TouchableOpacity> */}
   </View>
 
 );

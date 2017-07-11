@@ -37,5 +37,24 @@ export default EStyleSheet.create({
     fontWeight: '300',
     textAlign: 'center',
   },
+  createRoomContainer: {
+    width: 116,
+    height: 144,
+    borderRadius: 4,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#979797',
+    left: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  plusText: {
+    fontSize: 50,
+    marginVertical: 15,
+    color: '$white',
+  },
+  createRoomText: {
+    color: '$white',
+  }
 
 });
