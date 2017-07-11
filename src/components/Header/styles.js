@@ -22,4 +22,32 @@ export default EStyleSheet.create({
     letterSpacing: -0.71,
     color: '$textColor',
   },
+  searchHeaderBox: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 80,
+    // position: 'relative',
+    // borderColor: 'red',
+    // borderStyle: 'dotted',
+    // borderWidth: 5,
+  },
+  createRoomContainer: {
+    width: 116,
+    height: 144,
+    borderRadius: 4,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#979797',
+    left: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  plusText: {
+    fontSize: 50,
+    marginVertical: 15,
+    color: '$white',
+  },
+  createRoomText: {
+    color: '$white',
+  }
 });

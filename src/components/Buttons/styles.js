@@ -37,4 +37,5 @@ export default EStyleSheet.create({
     fontWeight: '300',
     textAlign: 'center',
   },
+
 });

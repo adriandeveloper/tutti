@@ -1,7 +1,7 @@
 import React from 'react';
 import { Scene, Router } from 'react-native-router-flux';
 import Login from './screens/Login';
-import Home from './screens/Home';
+import Chat from './screens/Chat';
 import SignUp from './screens/SignUp';
 
 const RouterComponent = () => (
@@ -15,8 +15,8 @@ const RouterComponent = () => (
       <Scene key="SignUp" component={SignUp} hideNavBar />
       </Scene>
 
-      <Scene key='homeScreen'>
-        <Scene key="Home" component={Home} hideNavBar={false} sceneStyle={{ paddingTop: 65 }} />
+      <Scene key='chatScreen'>
+        <Scene key="Chat" component={Chat} hideNavBar />
       </Scene>
 
     </Router>

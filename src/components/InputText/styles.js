@@ -56,5 +56,18 @@ export default EStyleSheet.create({
     fontWeight: '300',
     textAlign: 'center',
   },
+  searchBox: {
+    width: 308,
+    height: 29,
+    borderRadius: 4,
+    backgroundColor: '#3B4152',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#fff',
+  },
+  searchBoxContainer: {
+    // opacity: 0.07,
+  },
 
 });
