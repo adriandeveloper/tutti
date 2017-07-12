@@ -23,6 +23,10 @@ EStyleSheet.build({
   $textColor: '#373e52',
   $offWhite: '#fcfafa',
 
+  // borderStyle: 'solid',
+  // borderWidth: 1,
+  // borderColor: '#979797',
+
   // toggle to see where the components are laid out
   // outline: 1,
 });

@@ -25,6 +25,7 @@ onButtonPress() {
     this.props.loginUser({ email, password });
   }
 
+
   render() {
     return (
       <Container >
@@ -79,7 +80,7 @@ onButtonPress() {
             <Text style={styles.loginTextFont}>Log In!</Text>
           </View>
         </TouchableOpacity>
-
+        <View style={styles.loginContainerShdw} />
 
         <FacebookBtn
           buttonText='Login with Facebook'

@@ -2,7 +2,6 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default EStyleSheet.create({
   container: {
-    marginTop: '6%',
   },
   signUpText: {
     color: '$primaryPink',
@@ -14,9 +13,12 @@ export default EStyleSheet.create({
     fontSize: 18,
     fontWeight: '300',
     textAlign: 'center',
+    bottom: 10,
   },
-  signInText: {
-    // color: '#008AD8',
+  needAccount: {
+    fontWeight: '300',
+    fontFamily: 'OpenSans',
+    fontSize: 15,
+    top: 10,
   },
-  signUpContainer: {},
 });

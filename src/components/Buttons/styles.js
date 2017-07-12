@@ -7,10 +7,7 @@ export default EStyleSheet.create({
     height: 54,
     width: 237,
     marginTop: '8.5%',
-    // borderColor: 'pink',
-    // borderStyle: 'dotted',
-    // borderWidth: 10,
-    zIndex: 2,
+    zIndex: 3,
   },
   icon: {},
   loginContainer: {
@@ -58,8 +55,6 @@ export default EStyleSheet.create({
     color: '$white',
   },
   modal: {
-    // justifyContent: 'center',
-    // alignItems: 'center',
     height: 469,
     width: 308,
     borderRadius: 3,
@@ -70,7 +65,6 @@ export default EStyleSheet.create({
     paddingTop: 40,
   },
   createRoomHeaderTxt: {
-    // width: 207,
     height: 28,
     fontFamily: 'OpenSans',
     fontSize: 21,
@@ -80,11 +74,6 @@ export default EStyleSheet.create({
   roomNameInput: {
     width: 125,
     height: 40,
-    // borderStyle: 'solid',
-    // borderWidth: 1,
-    // borderColor: 'pink',
-    // borderStyle: 'dotted',
-    // borderWidth: 10,
   },
   roomDesccriptionInput: {
 
@@ -97,9 +86,6 @@ export default EStyleSheet.create({
     top: 17,
   },
   textinputContainer: {
-    // borderColor: 'pink',
-    // borderStyle: 'dotted',
-    // borderWidth: 10,
     width: 125,
     top: 46,
     left: '10.4%',
@@ -116,8 +102,28 @@ export default EStyleSheet.create({
   image: {
     width: 64,
     height: 64,
-    // borderStyle: 'solid',
-    // borderWidth: 1,
-    // borderColor: '#979797',
+
   },
+  FacebookButtonContainerShadow: {
+    shadowColor: 'rgba(55,77,144,0.4)',
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowRadius: 7,
+    shadowOpacity: 1,
+    alignItems: 'center',
+    width: 217,
+    height: 14,
+    bottom: 14,
+    zIndex: 2,
+  },
+  facebookButtonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 2,
+    // top: 15,
+  },
+
+
 });

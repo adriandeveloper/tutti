@@ -5,8 +5,8 @@ import styles from './styles';
 
 const Footer = () => (
   <View style={styles.container}>
-    <Text>Don't have an account? <Text
-                                  style={styles.signUpText}
+    <Text style={styles.needAccount}>Don't have an account? <Text
+                                  style={[styles.signUpText, styles.needAccount]}
                                   onPress={() => Actions.signupForm()}
     >
                                     Sign up

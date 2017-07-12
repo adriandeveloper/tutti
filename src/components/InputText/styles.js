@@ -41,6 +41,7 @@ export default EStyleSheet.create({
     height: 54,
     width: 237,
     marginTop: '7.5%',
+    zIndex: 2,
   },
   loginTextFont: {
     color: '$white',
@@ -73,6 +74,19 @@ export default EStyleSheet.create({
   },
   searchBoxContainer: {
     // opacity: 0.07,
+  },
+  loginContainerShdw: {
+    alignItems: 'center',
+    width: 217,
+    height: 14,
+    bottom: 14,
+    shadowColor: 'rgba(0,0,0,0.4)',
+    shadowOffset: {
+      width: 0,
+      height: 0.5,
+    },
+    shadowRadius: 8,
+    shadowOpacity: 1,
   },
 
 });
