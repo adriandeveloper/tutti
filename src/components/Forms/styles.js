@@ -6,8 +6,7 @@ export default EStyleSheet.create({
     width: 296,
     height: 316,
     borderRadius: 4,
-    // marginBottom: 40,
-    bottom: 30,
+    bottom: 45,
     zIndex: 1,
   },
   textField: {
@@ -19,23 +18,14 @@ export default EStyleSheet.create({
   },
   textInput: {
     height: 31,
-    // borderColor: 'red',
-    // borderStyle: 'solid',
-    // borderWidth: 10,
   },
   textFieldContainer: {
     width: 230,
     left: 31,
-    // borderColor: 'pink',
-    // borderStyle: 'dotted',
-    // borderWidth: 10,
   },
   textContainerField: {
     top: '18%',
     marginVertical: -13,
-    // borderColor: 'pink',
-    // borderStyle: 'dotted',
-    // borderWidth: 10,
   },
   createAccountText: {
     height: 24,
@@ -46,5 +36,11 @@ export default EStyleSheet.create({
     textAlign: 'center',
     color: '$primaryPink',
     bottom: 33,
+  },
+  containerShadow: {
+    shadowColor: 'rgba(0,0,0,0.4)',
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 10,
+    shadowOpacity: 1,
   },
 });

@@ -53,7 +53,7 @@ class SignUp extends Component {
         />
         {/* <SignUpForm /> */}
 
-        <View style={styles.container}>
+        <View style={[styles.container, styles.containerShadow]}>
 
           <ScrollView>
             <View style={styles.textFieldContainer}>
