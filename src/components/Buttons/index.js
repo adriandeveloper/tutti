@@ -1,8 +1,8 @@
 import FacebookBtn from './FacebookBtn';
 import GooglePlayBtn from './GooglePlayBtn';
-import CreateRoom from './CreateRoom';
+import CreateRoomBtn from './CreateRoomBtn';
 import LoginBtn from './LoginBtn';
 import styles from './styles';
 
 
-export { FacebookBtn, GooglePlayBtn, CreateRoom, LoginBtn, styles };
+export { FacebookBtn, GooglePlayBtn, CreateRoomBtn, LoginBtn, styles };
