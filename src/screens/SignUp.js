@@ -12,28 +12,63 @@ import {
   emailChangedSU,
   userChangedSU,
   passwordChangedSU,
-  signUpUser
+  signUpUserSU
 } from '../actions/signup/';
 // import LoginBtn from '../components/Buttons/LoginBtn';
 
 
 class SignUp extends Component {
-
+  constructor(props){
+    super(props);
+    this.state = {
+      username: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    }
+  }
   onUserChangeSU(text) {
-    this.props.userChangedSU(text);
+    this.setState({
+      username: text
+    });
+    // this.props.userChangedSU(text);
   }
 
   onEmailChangeSU(text) {
-    this.props.emailChangedSU(text);
+    this.setState({
+      email: text
+    });
+    // this.props.emailChangedSU(text);
   }
 
   onPasswordChangeSU(text) {
-    this.props.passwordChangedSU(text);
+    this.setState({
+      password: text
+    });
+    // this.props.passwordChangedSU(text);
+  }
+
+  onConfirmPasswordChangeSU(text) {
+    this.setState({
+      confirmPassword: text
+    });
+    // this.props.passwordChangedSU(text);
   }
 
   onButtonPress() {
-    const { email_su, password_su } = this.props;
-    this.props.signUpUser({ email_su, password_su });
+    const {
+      username,
+      email,
+      password,
+      confirmPassword
+    } = this.state;
+    this.props.signUpUserSU({
+      username_su: username,
+      email_su: email,
+      password_su: password,
+      confirm_password_su: confirmPassword
+    });
+    // this.props.loginUser({ email_su, password_su });
   }
 
   render() {
@@ -65,7 +100,7 @@ class SignUp extends Component {
                   label={'username'}
                   style={styles.textInput}
                   onChangeText={this.onUserChangeSU.bind(this)}
-                  value={this.props.user_su}
+                  value={this.state.username}
                 />
               </View>
               <View style={styles.textContainerField}>
@@ -76,7 +111,7 @@ class SignUp extends Component {
                   label={'email'}
                   style={styles.textInput}
                   onChangeText={this.onEmailChangeSU.bind(this)}
-                  value={this.props.email_su}
+                  value={this.state.email}
                 />
               </View>
               <View style={styles.textContainerField}>
@@ -88,7 +123,7 @@ class SignUp extends Component {
                   label={'password'}
                   style={styles.textInput}
                   onChangeText={this.onPasswordChangeSU.bind(this)}
-                  value={this.props.password_su}
+                  value={this.state.password}
                 />
               </View>
               <View style={styles.textContainerField}>
@@ -98,6 +133,8 @@ class SignUp extends Component {
                   highlightColor={'#FF456E'}
                   label={'retype password'}
                   style={styles.textInput}
+                  onChangeText={this.onConfirmPasswordChangeSU.bind(this)}
+                  value={this.state.confirmPassword}
                 />
               </View>
             </View>
@@ -120,15 +157,6 @@ class SignUp extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-    user_su: state.sign.user_su,
-    email_su: state.sign.email_su,
-    password_su: state.sign.password_su
-  });
-
-export default connect(mapStateToProps, {
-  emailChangedSU,
-  userChangedSU,
-  passwordChangedSU,
-  signUpUser
+export default connect(null, {
+  signUpUserSU
   })(SignUp);
