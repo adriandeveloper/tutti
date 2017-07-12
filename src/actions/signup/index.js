@@ -5,8 +5,8 @@ import {
   EMAIL_CHANGED_SU,
   PASSWORD_CHANGED_SU,
   USER_CHANGED_SU,
-  CREATE_USER_SU
-  // CREATE_USER_SU,
+  CREATE_USER_SU,
+  LOGIN_USER_SUCCESS_SU
 } from './types';
 
   export const emailChangedSU = (text) => ({
@@ -32,25 +32,7 @@ import {
       });
     };
 
-//this is redux-thunk
-  // export const loginUser = ({ email, password }) => (dispatch) => {
-  //     firebase.auth().signInWithEmailAndPassword(email, password)
-  //       .then(user => loginUserSuccess(dispatch, user))
-  //       //this catch statment is if failed
-  //       .catch(() => loginUserFail(dispatch));
-  //   };
 
-
-//helper function below
-// const loginUserFail = (dispatch) => {
-//   dispatch({ type: LOGIN_USER_FAIL });
-// };
-//
-
-// const loginUserSuccess = (dispatch, user) => {
-//   dispatch({
-//     type: LOGIN_USER_SUCCESS,
-//     payload: user
-//   });
-//   Actions.homeScreen();
-// };
+    const loginUserFailSU = (dispatch) => {
+      dispatch({ type: LOGIN_USER_SUCCESS_SU });
+    };
