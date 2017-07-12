@@ -5,7 +5,13 @@ import styles from './styles';
 
 const Footer = () => (
   <View style={styles.container}>
-    <Text>Don't have an account? <Text onPress={() => Actions.signupForm()}>Sign up </Text> </Text>
+    <Text>Don't have an account? <Text
+                                  style={styles.signUpText}
+                                  onPress={() => Actions.signupForm()}
+    >
+                                    Sign up
+                                </Text>
+    </Text>
   </View>
 );
 

@@ -54,65 +54,65 @@ class SignUp extends Component {
         {/* <SignUpForm /> */}
 
         <View style={styles.container}>
-          <View style={styles.textContainer}>
-            <Text style={styles.text}>OR</Text>
-          </View>
 
-          <ScrollView >
-            <View>
-              <TextField
-                autoCorrect={false}
-                enablesReturnKeyAutomatically
-                highlightColor={'#FF456E'}
-                label={'username'}
-                style={styles.textInput}
-                onChangeText={this.onUserChangeSU.bind(this)}
-                value={this.props.user_su}
-              />
-            </View>
-              <TextField
-                autoCorrect={false}
-                enablesReturnKeyAutomatically
-                highlightColor={'#FF456E'}
-                label={'email'}
-                style={styles.textInput}
-                onChangeText={this.onEmailChangeSU.bind(this)}
-                value={this.props.email_su}
-              />
-            <View>
-              <TextField
-                autoCorrect={false}
-                enablesReturnKeyAutomatically
-                secureTextEntry
-                highlightColor={'#FF456E'}
-                label={'password'}
-                style={styles.textInput}
-                onChangeText={this.onPasswordChangeSU.bind(this)}
-                value={this.props.password_su}
-              />
-            </View>
-            <View>
-              <TextField
-                autoCorrect={false}
-                enablesReturnKeyAutomatically
-                highlightColor={'#FF456E'}
-                label={'retype password'}
-                style={styles.textInput}
-              />
+          <ScrollView>
+            <View style={styles.textFieldContainer}>
+              <View style={styles.textContainerField}>
+                <TextField
+                  autoCorrect={false}
+                  enablesReturnKeyAutomatically
+                  highlightColor={'#FF456E'}
+                  label={'username'}
+                  style={styles.textInput}
+                  onChangeText={this.onUserChangeSU.bind(this)}
+                  value={this.props.user_su}
+                />
+              </View>
+              <View style={styles.textContainerField}>
+                <TextField
+                  autoCorrect={false}
+                  enablesReturnKeyAutomatically
+                  highlightColor={'#FF456E'}
+                  label={'email'}
+                  style={styles.textInput}
+                  onChangeText={this.onEmailChangeSU.bind(this)}
+                  value={this.props.email_su}
+                />
+              </View>
+              <View style={styles.textContainerField}>
+                <TextField
+                  autoCorrect={false}
+                  enablesReturnKeyAutomatically
+                  secureTextEntry
+                  highlightColor={'#FF456E'}
+                  label={'password'}
+                  style={styles.textInput}
+                  onChangeText={this.onPasswordChangeSU.bind(this)}
+                  value={this.props.password_su}
+                />
+              </View>
+              <View style={styles.textContainerField}>
+                <TextField
+                  autoCorrect={false}
+                  enablesReturnKeyAutomatically
+                  highlightColor={'#FF456E'}
+                  label={'retype password'}
+                  style={styles.textInput}
+                />
+              </View>
             </View>
           </ScrollView>
+          <TouchableOpacity
+            // onPress={() => console.log('puff')}
+            onPress={this.onButtonPress.bind(this)}
+            resizeMode="contain"
+            style={styles.loginContainer}
+          >
+              <View style={styles.textContainer}>
+                <Text style={styles.createAccountText}>Create Account</Text>
+              </View>
+            </TouchableOpacity>
         </View>
-
-        <TouchableOpacity
-          // onPress={() => console.log('puff')}
-          onPress={this.onButtonPress.bind(this)}
-          resizeMode="contain"
-          style={styles.loginContainer}
-        >
-          <View style={styles.textContainer}>
-            <Text style={styles.loginTextFont}>Log In!</Text>
-          </View>
-        </TouchableOpacity>
 
         <FooterSignUp />
       </SignUpContainer>

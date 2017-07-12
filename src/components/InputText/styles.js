@@ -2,6 +2,11 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default EStyleSheet.create({
   container: {
+    backgroundColor: '$facebookColor',
+    borderRadius: 3,
+    height: 54,
+    width: 237,
+    marginTop: '8.5%',
   },
   textInput: {
     height: 40,
@@ -19,16 +24,16 @@ export default EStyleSheet.create({
     color: 'red'
   },
 
-  container: {
-    backgroundColor: '$facebookColor',
-    borderRadius: 3,
-    height: 54,
-    width: 237,
-    marginTop: '8.5%',
+  // container: {
+  //   backgroundColor: '$facebookColor',
+  //   borderRadius: 3,
+  //   height: 54,
+  //   width: 237,
+  //   marginTop: '8.5%',
     // borderColor: 'pink',
     // borderStyle: 'dotted',
     // borderWidth: 10,
-  },
+  // },
   icon: {},
   loginContainer: {
     backgroundColor: '$primaryBlue',

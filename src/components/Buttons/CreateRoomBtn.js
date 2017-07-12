@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import TextField from 'react-native-md-textinput';
 import Modal from 'react-native-modalbox';
 import styles from './styles';
 
@@ -42,6 +43,7 @@ class CreateRoomBtn extends Component {
       </TouchableOpacity>
 
       <Modal
+        animationType={'fade'}
         style={styles.modal}
         swipeToClose={this.state.swipeToClose}
         onCLosed={this.onClose}
@@ -50,11 +52,25 @@ class CreateRoomBtn extends Component {
         isDisabled={this.state.isDisabled}
         ref={'modal'}
       >
-        <TextInput
-          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-          onChangeText={(text) => this.setState({ text })}
-          value={this.state.text}
-        />
+        <View style={styles.createRoomTxtContainer}>
+          <Text style={styles.createRoomHeaderTxt}>Let's Create a Room!</Text>
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            style={styles.image}
+          />
+        </View>
+        <View style={styles.textinputContainer}>
+          <TextField
+            autoCorrect={false}
+            enablesReturnKeyAutomatically
+            highlightColor={'#FF456E'}
+            label={'name:'}
+            style={styles.roomNameInput}
+            onChangeText={(text) => this.setState({ text })}
+            value={this.state.text}
+          />
+        </View>
       </Modal>
     </View>
 
