@@ -29,7 +29,7 @@ import {
       .then(user => {
         console.log(user);
         dispatch({ type: CREATE_USER_SU, payload: user });
-        Actions.chatScreen();
+        Actions.roomScreen();
       });
     };
 
@@ -45,7 +45,7 @@ import {
     //     type: LOGIN_USER_SUCCESS_SU,
     //     payload: user
     //   });
-    //   Actions.chatScreen();
+    //   Actions.roomScreen();
     // };
     //
     // const loginUserFailSU = (dispatch) => {

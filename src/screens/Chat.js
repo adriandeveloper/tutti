@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 import { ChatContainer } from '../components/Containers';
-// import { SearchHeader } from '../components/Header';
-import { CreateRoomBtn } from '../components/Buttons';
 
 class Chat extends Component {
   render() {
@@ -10,12 +8,9 @@ class Chat extends Component {
       <ChatContainer>
         <StatusBar
           translucent={false}
-          barStyle='light-content'
+          barStyle='default'
         />
 
-        {/* <SearchHeader /> */}
-
-        <CreateRoomBtn />
 
 
       </ChatContainer>

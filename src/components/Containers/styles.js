@@ -11,8 +11,9 @@ export default EStyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  chatContainer: {
+  roomContainer: {
     backgroundColor: '$darkBlue',
     flex: 1,
-  }
+  },
+  chatContainer: {},
 });
