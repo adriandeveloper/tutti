@@ -9,7 +9,6 @@ export default EStyleSheet.create({
     marginTop: '8.5%',
     zIndex: 3,
   },
-  icon: {},
   loginContainer: {
     backgroundColor: '$primaryBlue',
     borderRadius: 3,
@@ -62,7 +61,7 @@ export default EStyleSheet.create({
   },
   wrapper: {
     flex: 1,
-    paddingTop: 40,
+    paddingTop: 100,
   },
   createRoomHeaderTxt: {
     height: 28,
@@ -75,11 +74,6 @@ export default EStyleSheet.create({
     width: 125,
     height: 40,
   },
-  roomDesccriptionInput: {
-
-  },
-  createRoomBtn: {},
-  roomImg: {},
   createRoomTxtContainer: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -87,17 +81,11 @@ export default EStyleSheet.create({
   },
   textinputContainer: {
     width: 125,
-    top: 46,
-    left: '10.4%',
+    bottom: 15,
   },
   imageContainer: {
-    borderColor: 'pink',
-    borderStyle: 'dotted',
-    borderWidth: 10,
     width: 64,
     height: 67,
-    top: 15,
-    left: '10.7%',
   },
   image: {
     width: 64,
@@ -124,6 +112,43 @@ export default EStyleSheet.create({
     zIndex: 2,
     // top: 15,
   },
-
+  imageAndNameInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    top: '10%',
+    width: 250,
+    left: 30,
+  },
+  roomDescContainer: {
+    top: '8%',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    left: 31,
+  },
+  roomDescInputTxt: {
+    width: 225,
+    height: 60,
+    top: 5,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: 'black',
+  },
+  roomDescTitle: {
+    color: '#FF456E',
+    fontFamily: 'OpenSans',
+  },
+  createRoomButtonContainer: {
+    width: 132,
+    alignItems: 'center',
+    justifyContent: 'center',
+    // borderStyle: 'dashed',
+    // borderWidth: 1,
+    // borderColor: 'pink',
+    top: 200,
+    left: '25%',
+  },
+  createRoomButton: {
+  },
 
 });
