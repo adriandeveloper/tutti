@@ -14,7 +14,7 @@ class CreateRoomModal extends Component {
       isDisabled: false,
       swipeToClose: true,
       roomName: '',
-      roomDesc: 'Placeholder',
+      roomDesc: '',
     };
   }
 
