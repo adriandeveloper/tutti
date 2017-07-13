@@ -17,7 +17,8 @@ const RouterComponent = () => (
       </Scene>
 
       <Scene key='roomScreen'>
-        <Scene key="Rooms" component={Rooms} hideNavBar />
+        {/* <Scene key="Rooms" component={Rooms} hideNavBar /> */}
+        <Scene key="Chat" component={Chat} hideNavBar />
       </Scene>
 
       <Scene key='chatScreen'>
