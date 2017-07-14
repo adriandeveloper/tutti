@@ -1,31 +1,33 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
 import { View, Text, TouchableOpacity, Image, TextInput, Button } from 'react-native';
 import TextField from 'react-native-md-textinput';
 import Modal from 'react-native-modalbox';
 import styles from './styles';
 
 class CreateRoomBtn extends Component {
+
+
   constructor() {
     super();
     this.state = {
-      isOpen: false,
-      isDisabled: false,
-      swipeToClose: true,
+      // isOpen: false,
+      // isDisabled: false,
+      // swipeToClose: true,
       roomName: '',
-      roomDesc: 'Placeholder',
+      roomDesc: '',
+
     };
   }
 
-  onClose() {
-    console.log('Modal closed');
-  }
+  // state = { roomName: '', roomDesc: '', };
 
-  onOpen() {
-    console.log('Modal opened');
-  }
-
-  onClosingState() {
-    console.log('the open/close of the swipeToClose just changed');
+  onButtonPress() {
+    const { roomName, roomDesc } = this.state;
+    firebase.database().ref('Room').child('RoomName')
+    .child(this.props.roomName)
+    .push(this.state.roomName: roomName);
+    // console.log(this.state);
   }
 
   render() {
@@ -48,8 +50,8 @@ class CreateRoomBtn extends Component {
         animationType={'fade'}
         style={styles.modal}
         swipeToClose={this.state.swipeToClose}
-        onCLosed={this.onClose}
-        onOpened={this.onOpen}
+        // onCLosed={this.onClose}
+        // onOpened={this.onOpen}
         position={'center'}
         isDisabled={this.state.isDisabled}
         ref={'modal'}
@@ -71,7 +73,7 @@ class CreateRoomBtn extends Component {
               highlightColor={'#FF456E'}
               label={'name:'}
               style={styles.roomNameInput}
-              onChangeText={(roomName) => this.setState({ roomName })}
+              onChangeText={roomName => this.setState({ roomName })}
               value={this.state.roomName}
             />
           </View>
@@ -95,6 +97,7 @@ class CreateRoomBtn extends Component {
 
         <View style={styles.createRoomButtonContainer}>
           <Button
+            onPress={this.onButtonPress.bind(this)}
             style={styles.createRoomButton}
             title='Create Room'
             color='#FF456E'
