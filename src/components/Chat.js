@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, TextInput, Text, Button, ScrollView } from 'react-native';
 import firebase from 'firebase';
-
 class Chat extends Component {
 
   constructor(props) {
@@ -15,12 +14,13 @@ class Chat extends Component {
     firebase.database().ref('Room').child('Chat').on('value', (snapshot) => {
       // console.log({ messages: snapshot.val() });
       // this.setState.message.push(snapshot.val())
-      let msg = snapshot.val();
-      let messages = [];
-      let msgSort = [];
-      for (let outerKey in msg) {
-        for (let innerKey in msg[outerKey]) {
+      const msg = snapshot.val();
+      const messages = [];
+      const msgSort = [];
+      for (const outerKey in msg) {
+        for (const innerKey in msg[outerKey]) {
           messages.push(msg[outerKey][innerKey]);
+          messages.slice(0 - 16);
         }
       }
 
@@ -58,6 +58,9 @@ class Chat extends Component {
 
         </View>
 
+        <View>
+            <Button title='other room'/>
+        </View>
 
   <ScrollView style={styles.chatwindowStyle}>
             {/* sorting out the view */}
