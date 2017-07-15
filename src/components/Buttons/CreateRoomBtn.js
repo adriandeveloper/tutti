@@ -39,13 +39,11 @@ class CreateRoomBtn extends Component {
     return (
     <View style={styles.wrapper}>
       <View style={styles.headerButtonsContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => firebase.auth().signOut()}
+        >
           <View style={styles.logoutContainer}>
-          <Button
-            onPress={() => firebase.auth().signOut()}
-            title='Logout'
-            style={styles.logoutTxt}
-          />
+            <Text style={styles.logoutTxt}>Logout</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
