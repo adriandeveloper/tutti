@@ -37,9 +37,6 @@ class CreateRoomBtn extends Component {
         style={styles.createRoomContainer}
         onPress={() => this.refs.modal.open()}
       >
-        <View >
-          <Text style={styles.createRoomText}>Create a Room</Text>
-        </View>
         <View>
             <Text style={styles.plusText}>+</Text>
         </View>

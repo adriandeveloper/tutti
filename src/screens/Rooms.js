@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 import { RoomContainer } from '../components/Containers';
-// import { SearchHeader } from '../components/Header';
-import { CreateRoomBtn } from '../components/Buttons';
+import { SearchHeader } from '../components/Header';
+// import { CreateRoomBtn } from '../components/Buttons';
 
 class Room extends Component {
   render() {
@@ -13,9 +13,9 @@ class Room extends Component {
           barStyle='light-content'
         />
 
-        {/* <SearchHeader /> */}
+        <SearchHeader />
 
-        <CreateRoomBtn />
+        {/* <CreateRoomBtn /> */}
 
 
       </RoomContainer>
