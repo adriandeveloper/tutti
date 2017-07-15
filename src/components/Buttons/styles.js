@@ -9,31 +9,6 @@ export default EStyleSheet.create({
     marginTop: '8.5%',
     zIndex: 3,
   },
-  loginContainer: {
-    backgroundColor: '$primaryBlue',
-    borderRadius: 3,
-    height: 54,
-    width: 237,
-    marginTop: '7.5%',
-  },
-  loginTextFont: {
-    color: '$white',
-    fontFamily: 'Open Sans',
-    fontSize: 29,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    bottom: 10,
-  },
-  textContainer: {
-    marginTop: 18,
-  },
-  textFont: {
-    color: '$white',
-    fontFamily: 'Open Sans',
-    fontSize: 13,
-    fontWeight: '300',
-    textAlign: 'center',
-  },
   FacebookButtonContainerShadow: {
     shadowColor: 'rgba(55,77,144,0.4)',
     shadowOffset: {
@@ -54,17 +29,17 @@ export default EStyleSheet.create({
     zIndex: 2,
     // top: 15,
   },
+  headerButtonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   iconContainer: {
     right: 40,
     top: 1,
   },
   icon: {
     color: '$white',
-  },
-  headerButtonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
   logoutContainer: {
     left: 40,
@@ -74,6 +49,27 @@ export default EStyleSheet.create({
       fontFamily: 'OpenSans',
       fontSize: 15,
       fontWeight: '600',
+  },
+  loginContainer: {
+    backgroundColor: '$primaryBlue',
+    borderRadius: 3,
+    height: 54,
+    width: 237,
+    marginTop: '7.5%',
+  },
+  loginTextFont: {
+    color: '$white',
+    fontFamily: 'Open Sans',
+    fontSize: 29,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    bottom: 10,
+  },
+  modal: {
+    width: 308,
+    height: 469,
+    borderRadius: 3,
+    backgroundColor: '$white',
   },
   textHeadersContainer: {
     // borderColor: 'pink',
@@ -96,6 +92,16 @@ export default EStyleSheet.create({
     textAlign: 'center',
     fontWeight: '300',
     color: '#777577',
+  },
+  textContainer: {
+    marginTop: 18,
+  },
+  textFont: {
+    color: '$white',
+    fontFamily: 'Open Sans',
+    fontSize: 13,
+    fontWeight: '300',
+    textAlign: 'center',
   },
 
 
