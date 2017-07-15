@@ -54,5 +54,49 @@ export default EStyleSheet.create({
     zIndex: 2,
     // top: 15,
   },
+  iconContainer: {
+    right: 40,
+    top: 1,
+  },
+  icon: {
+    color: '$white',
+  },
+  headerButtonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  logoutContainer: {
+    left: 40,
+  },
+  logoutTxt: {
+      color: '$white',
+      fontFamily: 'OpenSans',
+      fontSize: 15,
+      fontWeight: '600',
+  },
+  textHeadersContainer: {
+    // borderColor: 'pink',
+    // borderStyle: 'dotted',
+    // borderWidth: 5,
+    // marginVertical: -30,
+    marginTop: -50,
+    top: 300,
+  },
+  textHeader: {
+    fontFamily: 'OpenSans',
+    fontSize: 23,
+    fontWeight: '300',
+    textAlign: 'center',
+    color: '#777577',
+  },
+  textSubHeader: {
+    fontFamily: 'OpenSans',
+    fontSize: 11,
+    textAlign: 'center',
+    fontWeight: '300',
+    color: '#777577',
+  },
+
 
 });

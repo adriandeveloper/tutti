@@ -11,7 +11,6 @@ export default EStyleSheet.create({
     fontWeight: '300',
     color: '$textColor',
   },
-  icon: {},
   textTitleContainer: {
     marginVertical: '7.5%',
   },
@@ -24,12 +23,12 @@ export default EStyleSheet.create({
   },
   searchHeaderBox: {
     justifyContent: 'center',
-    alignItems: 'center',
+    // alignItems: 'center',
     height: 80,
     // position: 'relative',
-    borderColor: 'red',
-    borderStyle: 'dotted',
-    borderWidth: 5,
+    // borderColor: 'red',
+    // borderStyle: 'dotted',
+    // borderWidth: 5,
   },
   chatHeaderContainer: {
     // elevation: 2,

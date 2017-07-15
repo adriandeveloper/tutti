@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import { View, Text, TouchableOpacity, Image, TextInput, Button } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 import TextField from 'react-native-md-textinput';
 import Modal from 'react-native-modalbox';
 import styles from './styles';
@@ -31,48 +30,21 @@ class CreateRoomBtn extends Component {
     // console.log(this.state);
   }
 
-  onPressButton() {
-    firebase.auth().signOut();
-  }
-
   render() {
     return (
     <View style={styles.wrapper}>
-      <View style={styles.headerButtonsContainer}>
-        <TouchableOpacity>
-          <View style={styles.logoutContainer}>
-          <Button
-            onPress={() => firebase.auth().signOut()}
-            title='Logout'
-            style={styles.logoutTxt}
-          />
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.createRoomContainer}
-          onPress={() => this.refs.modal.open()}
-        >
-
-            <View style={styles.iconContainer}>
-              <Icon
-                name='ios-add'
-                size={40}
-                style={styles.icon}
-              />
-            </View>
-
-          </TouchableOpacity>
-
-      </View>
-
-      <View style={styles.textHeadersContainer}>
-        <View>
-          <Text style={styles.textHeader}> Looks like nobody's home :(</Text>
+      <TouchableOpacity
+        style={styles.createRoomContainer}
+        onPress={() => this.refs.modal.open()}
+      >
+        <View >
+          <Text style={styles.createRoomText}>Create a Room</Text>
         </View>
         <View>
-          <Text style={styles.textSubHeader}>click on the 'plus' above to add some groups</Text>
+            <Text style={styles.plusText}>+</Text>
         </View>
-      </View>
+
+      </TouchableOpacity>
 
       <Modal
         animationType={'fade'}
