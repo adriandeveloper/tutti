@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
-import { View, Text, TouchableOpacity, Image, TextInput, Button } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import TextField from 'react-native-md-textinput';
 import Modal from 'react-native-modalbox';
@@ -82,17 +82,12 @@ class CreateRoomBtn extends Component {
         isDisabled={this.state.isDisabled}
         ref={'modal'}
       >
-        <View style={styles.createRoomTxtContainer}>
+        <View style={styles.createRoomHeaderContainer}>
           <Text style={styles.createRoomHeaderTxt}>Let's Create a Room!</Text>
         </View>
         <View style={styles.imageAndNameInputContainer}>
-          <View style={styles.imageContainer}>
-            <Image
-              style={styles.image}
-              source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
-            />
-          </View>
-          <View style={styles.textinputContainer}>
+
+          <View style={styles.roomContainer}>
             <TextField
               autoCorrect={false}
               enablesReturnKeyAutomatically
@@ -106,28 +101,40 @@ class CreateRoomBtn extends Component {
 
         </View>
 
-        <View style={styles.roomDescContainer}>
-          <Text style={styles.roomDescTitle}>Room Description:</Text>
-
-          <View style={styles.roomDescInputTxt}>
-            <TextInput
-              editable
-              maxLength={40}
-              multiline
-              numberOfLines={3}
+        <View style={styles.roomContainer}>
+            <TextField
+              autoCorrect={false}
+              enablesReturnKeyAutomatically
+              highlightColor={'#FF456E'}
+              label={'room description:'}
+              style={styles.roomDescInput}
               onChangeText={roomDesc => this.setState({ roomDesc })}
               value={this.state.roomDesc}
             />
+        </View>
+
+        <View style={styles.addFriendsContainer}>
+          <Text style={styles.addFriendsAndImageText}>add friends</Text>
+        </View>
+
+
+        <View style={styles.addImageContainer}>
+          <View><Text style={styles.addFriendsAndImageText}>add an image</Text></View>
+          <View style={styles.imageContainer}>
+          <Image
+            style={styles.image}
+            source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+          />
           </View>
         </View>
 
         <View style={styles.createRoomButtonContainer}>
-          <Button
-            onPress={this.onButtonPress.bind(this)}
+          <TouchableOpacity
             style={styles.createRoomButton}
-            title='Create Room'
-            color='#FF456E'
-          />
+            onPress={this.onButtonPress.bind(this)}
+          >
+              <Text style={styles.createRoomText}>CREATE ROOM</Text>
+          </TouchableOpacity>
         </View>
 
 

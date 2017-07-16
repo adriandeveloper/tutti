@@ -1,6 +1,18 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default EStyleSheet.create({
+  addFriendsContainer: {
+    top: 60,
+  },
+  addFriendsAndImageText: {
+    fontFamily: 'OpenSans',
+    fontSize: 14,
+    color: '#9b9b9b',
+    textAlign: 'center',
+  },
+  addImageContainer: {
+    top: 90,
+  },
   container: {
     backgroundColor: '$facebookColor',
     borderRadius: 3,
@@ -8,6 +20,35 @@ export default EStyleSheet.create({
     width: 237,
     marginTop: '8.5%',
     zIndex: 3,
+  },
+  createRoomButtonContainer: {
+    top: 140,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  createRoomButton: {
+    width: 194,
+    height: 34,
+    borderRadius: 5,
+    backgroundColor: '$primaryPink',
+    margin: 8,
+  },
+  createRoomHeaderContainer: {
+    top: 38,
+  },
+  createRoomHeaderTxt: {
+    textAlign: 'center',
+    fontFamily: 'OpenSans',
+    fontSize: 18,
+    color: '$primaryPink',
+    fontWeight: '600',
+  },
+  createRoomText: {
+    textAlign: 'center',
+    fontFamily: 'OpenSans',
+    fontSize: 20,
+    color: '$white',
+
   },
   FacebookButtonContainerShadow: {
     shadowColor: 'rgba(55,77,144,0.4)',
@@ -41,6 +82,19 @@ export default EStyleSheet.create({
   icon: {
     color: '$white',
   },
+  image: {
+    width: 60,
+    height: 60,
+    // borderColor: 'pink',
+    // borderStyle: 'dotted',
+    // borderWidth: 5,
+  },
+  imageContainer: {
+    top: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   logoutContainer: {
     left: 40,
   },
@@ -71,10 +125,20 @@ export default EStyleSheet.create({
     borderRadius: 3,
     backgroundColor: '$white',
   },
+  roomContainer: {
+    top: 40,
+    width: 192,
+    left: 58,
+
+  },
+  roomDescInput: {
+    height: 33,
+  },
+  roomNameInput: {
+    height: 33,
+  },
   textHeadersContainer: {
-    // borderColor: 'pink',
-    // borderStyle: 'dotted',
-    // borderWidth: 5,
+
     // marginVertical: -30,
     marginTop: -50,
     top: 300,
@@ -85,6 +149,7 @@ export default EStyleSheet.create({
     fontWeight: '300',
     textAlign: 'center',
     color: '#777577',
+
   },
   textSubHeader: {
     fontFamily: 'OpenSans',
