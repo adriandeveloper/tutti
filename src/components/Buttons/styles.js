@@ -2,8 +2,6 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default EStyleSheet.create({
   addFriendsButtonContainer: {
-    left: 140,
-    top: 10,
     borderColor: '$black',
     borderWidth: 1,
     borderStyle: 'solid',
@@ -12,9 +10,12 @@ export default EStyleSheet.create({
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
+    top: 10,
   },
   addFriendsContainer: {
-    top: 60,
+    top: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   addFriendsAndImageText: {
     fontFamily: 'OpenSans',
@@ -96,6 +97,7 @@ export default EStyleSheet.create({
   },
   icon2: {
     color: '$black',
+    textAlign: 'center',
   },
   logoutContainer: {
     left: 40,
