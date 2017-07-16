@@ -3,8 +3,14 @@ import firebase from 'firebase';
 import { View, Text, TouchableOpacity, Image, TextInput, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import TextField from 'react-native-md-textinput';
+import { Actions } from 'react-native-router-flux';
 import Modal from 'react-native-modalbox';
 import styles from './styles';
+
+// import {
+//   logOutUser
+// } from '../../actions/user';
+
 
 class CreateRoomBtn extends Component {
 
@@ -32,18 +38,16 @@ class CreateRoomBtn extends Component {
   }
 
   onPressButton() {
-    firebase.auth().signOut();
+    Actions.auth();
   }
 
   render() {
     return (
     <View style={styles.wrapper}>
       <View style={styles.headerButtonsContainer}>
-        <TouchableOpacity
-          onPress={() => firebase.auth().signOut()}
-        >
+        <TouchableOpacity >
           <View style={styles.logoutContainer}>
-            <Text style={styles.logoutTxt}>Logout</Text>
+            <Text onPress={this.onPressButton.bind(this)} style={styles.logoutTxt}>Logout</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity

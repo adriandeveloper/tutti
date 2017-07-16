@@ -9,9 +9,9 @@ import { FacebookBtn } from '../components/Buttons';
 import FooterSignUp from '../components/Footer/FooterSignUp';
 import styles from '../components/Forms/styles';
 import {
-  emailChangedSU,
-  userChangedSU,
-  passwordChangedSU,
+  // emailChangedSU,
+  // userChangedSU,
+  // passwordChangedSU,
   signUpUserSU
 } from '../actions/signup/';
 // import LoginBtn from '../components/Buttons/LoginBtn';
