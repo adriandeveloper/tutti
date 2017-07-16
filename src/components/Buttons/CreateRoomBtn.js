@@ -30,10 +30,11 @@ class CreateRoomBtn extends Component {
   // state = { roomName: '', roomDesc: '', };
 
   onButtonPress() {
-    const { roomName, roomDesc } = this.state;
-    firebase.database().ref('Room').child('RoomName')
-    .child(this.props.roomName)
-    .push(this.state.roomName: roomName);
+    // const { roomName, roomDesc } = this.state;
+    alert('Noni');
+    firebase.database().ref(this.state.roomName).push(this.state.roomDesc);
+    // .child(this.props.roomName)
+    // .push(this.state.roomName: roomName);
     // console.log(this.state);
   }
 
