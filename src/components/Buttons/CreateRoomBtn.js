@@ -120,17 +120,17 @@ class CreateRoomBtn extends Component {
 
         <View style={styles.addFriendsContainer}>
           <Text style={styles.addFriendsAndImageText}>add friends</Text>
-        </View>
-
-
-        <View style={styles.addImageContainer}>
-          <View><Text style={styles.addFriendsAndImageText}>add an image</Text></View>
-          <View style={styles.imageContainer}>
-          <Image
-            style={styles.image}
-            source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
-          />
-          </View>
+          <TouchableOpacity
+            style={styles.addFriendsButton}
+          >
+            <View style={styles.addFriendsButtonContainer}>
+              <Icon
+                name='ios-add'
+                size={20}
+                style={styles.icon2}
+              />
+            </View>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.createRoomButtonContainer}>

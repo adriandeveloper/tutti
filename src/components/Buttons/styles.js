@@ -1,6 +1,18 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default EStyleSheet.create({
+  addFriendsButtonContainer: {
+    left: 140,
+    top: 10,
+    borderColor: '$black',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    height: 28,
+    width: 28,
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   addFriendsContainer: {
     top: 60,
   },
@@ -82,18 +94,8 @@ export default EStyleSheet.create({
   icon: {
     color: '$white',
   },
-  image: {
-    width: 60,
-    height: 60,
-    // borderColor: 'pink',
-    // borderStyle: 'dotted',
-    // borderWidth: 5,
-  },
-  imageContainer: {
-    top: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+  icon2: {
+    color: '$black',
   },
   logoutContainer: {
     left: 40,

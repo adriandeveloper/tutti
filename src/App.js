@@ -22,6 +22,7 @@ EStyleSheet.build({
   $white: '#fff',
   $textColor: '#373e52',
   $offWhite: '#fcfafa',
+  $black: '#000',
 
   // borderStyle: 'solid',
   // borderWidth: 1,
