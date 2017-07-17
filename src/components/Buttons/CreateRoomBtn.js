@@ -11,7 +11,10 @@ import styles from './styles';
 // import {
 //   logOutUser
 // } from '../../actions/user';
-
+const goToUserSelectScreen = () => {
+  Actions.userSelection();
+  // alert('test');
+};
 
 class CreateRoomBtn extends Component {
 
@@ -71,7 +74,8 @@ class CreateRoomBtn extends Component {
   }
 
   onButtonPressed() {
-    return <UserSelection />;
+    goToUserSelectScreen();
+    // alert('Test');
   }
 
   render() {

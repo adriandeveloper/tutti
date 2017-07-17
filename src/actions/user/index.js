@@ -3,7 +3,7 @@
 //
 //
 // import {
-//   LOGOUT_SUCCESS
+//   USER_SELECTION,
 // } from './types';
 //
 // export const logOutUser = () => (dispatch) => {
@@ -12,3 +12,8 @@
 //   //  Actions.auth();
 //   });
 // };
+
+// export const userSelection = (text) => ({
+//   type: USER_SELECTION,
+//   payload: text
+// });
