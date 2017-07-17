@@ -4,6 +4,7 @@ import { View, Text, TouchableOpacity, Image, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import TextField from 'react-native-md-textinput';
 import { Actions } from 'react-native-router-flux';
+import UserSelection from '../Views';
 import Modal from 'react-native-modalbox';
 import styles from './styles';
 
@@ -69,6 +70,10 @@ class CreateRoomBtn extends Component {
     Actions.auth();
   }
 
+  onButtonPressed() {
+    return <UserSelection />;
+  }
+
   render() {
     return (
     <View style={styles.wrapper}>
@@ -83,15 +88,15 @@ class CreateRoomBtn extends Component {
           onPress={() => this.refs.modal.open()}
         >
 
-            <View style={styles.iconContainer}>
-              <Icon
-                name='ios-add'
-                size={40}
-                style={styles.icon}
-              />
-            </View>
+          <View style={styles.iconContainer}>
+            <Icon
+              name='ios-add'
+              size={40}
+              style={styles.icon}
+            />
+          </View>
 
-          </TouchableOpacity>
+        </TouchableOpacity>
 
       </View>
 
@@ -134,21 +139,22 @@ class CreateRoomBtn extends Component {
         </View>
 
         <View style={styles.roomContainer}>
-            <TextField
-              autoCorrect={false}
-              enablesReturnKeyAutomatically
-              highlightColor={'#FF456E'}
-              label={'room description:'}
-              style={styles.roomDescInput}
-              onChangeText={roomDesc => this.setState({ roomDesc })}
-              value={this.state.roomDesc}
-            />
+          <TextField
+            autoCorrect={false}
+            enablesReturnKeyAutomatically
+            highlightColor={'#FF456E'}
+            label={'room description:'}
+            style={styles.roomDescInput}
+            onChangeText={roomDesc => this.setState({ roomDesc })}
+            value={this.state.roomDesc}
+          />
         </View>
 
         <View style={styles.addFriendsContainer}>
           <Text style={styles.addFriendsAndImageText}>add friends</Text>
           <TouchableOpacity
             style={styles.addFriendsButton}
+            onPress={this.onButtonPressed.bind(this)}
           >
             <View style={styles.addFriendsButtonContainer}>
               <Icon
