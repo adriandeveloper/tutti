@@ -31,12 +31,39 @@ class CreateRoomBtn extends Component {
 
   onButtonPress() {
     // const { roomName, roomDesc } = this.state;
-    alert('Noni');
-    firebase.database().ref(this.state.roomName).push(this.state.roomDesc);
+    // alert('Noni');
+    // const fireBaseUser = firebase.auth().currentUser;
+    // const { currentUser } = firebase.auth();
+
+
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          alert(firebase.auth().currentUser.email);
+        } else {
+          alert('No user!');
+        }
+      });
+}
+
+    // firebase.database().ref(this.state.roomName).push(this.state.roomDesc);
     // .child(this.props.roomName)
     // .push(this.state.roomName: roomName);
     // console.log(this.state);
-  }
+    //
+    // listenToUserStatusUpdate(loader: any) {
+    //       firebase.auth().onAuthStateChanged((user) => {
+    //       if(loader)
+    //       loader.dismiss();
+    //       console.log("The User:", user);
+    //       if (user) {
+    //       this.nav.setRoot(TabsPage);
+    //       } else {
+    //       this.nav.setRoot(LoginPage);
+    //       }
+    //       });
+    //       }
+    //       }
+
 
   onPressButton() {
     Actions.auth();
