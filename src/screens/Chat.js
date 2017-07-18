@@ -1,81 +1,129 @@
 import React, { Component } from 'react';
-import { StatusBar, ScrollView, Text, View } from 'react-native';
+import { View, TextInput, Text, Button, ScrollView } from 'react-native';
 import firebase from 'firebase';
-import { ChatContainer } from '../components/Containers';
-// import { MessageScreen } from '../components/Views';
-import { ChatHeader } from '../components/Header';
-import { ChatFooter } from '../components/Footer';
-// import styles from '../components/Views/styles.js';
+import moment from 'moment';
+
 class Chat extends Component {
 
   constructor(props) {
-      super(props);
-      this.state = { chat: '',
-      messages: []
+    super(props);
+    this.state = { chat: '',
+    messages: []
 
-     };
+   };
 
-      // displaying the data from firebase
-      firebase.database().ref('Room').child('Chat').on('value', (snapshot) => {
-        // console.log({ messages: snapshot.val() });
-        // this.setState.message.push(snapshot.val())
-        const msg = snapshot.val();
-        const messages = [];
-        // const msgSort = [];
-        for (const outerKey in msg) {
-          for (const innerKey in msg[outerKey]) {
-            messages.push(msg[outerKey][innerKey]);
-            messages.slice(0 - 16);
-          }
+    // displaying the data from firebase
+    firebase.database().ref('Room').child('Chat').on('value', (snapshot) => {
+      // console.log({ messages: snapshot.val() });
+      // this.setState.message.push(snapshot.val())
+      const msg = snapshot.val();
+      const messages = [];
+      // const msgSort = [];
+      for (const outerKey in msg) {
+        // for (const innerKey in msg[outerKey]) {
+          messages.push(msg[outerKey]);
+          // messages.slice(0 - 16);
+        // }
+      }
+
+      console.log(messages.sort((a, b) => {
+        if (a < b) {
+          return -1;
+        } else if (a > b) {
+          return 1;
         }
 
-        console.log(messages.sort((a, b) => {
-          if (a < b) {
-            return -1;
-          } else if (a > b) {
-            return 1;
-          }
-
-          return 0;
-        }));
-        this.setState({ messages });
-        // console.log(snapsh);
-      });
-    }
+        return 0;
+      }));
+      this.setState({ messages });
+      // console.log(snapsh);
+    });
+  }
 
   render() {
     return (
-      <ChatContainer>
-        <StatusBar
-          translucent={false}
-          barStyle='default'
-        />
 
-        <ChatHeader />
 
-        {/* <ScrollView style={styles.messageWindow}>
-          <Text>What the fuck!</Text>
-        </ScrollView> */}
+      <View>
 
-        <ScrollView style={styles.chatwindowStyle}>
-          {/* sorting out the view */}
-          {this.state.messages.map((message, index) => (
-              <View key={`message-${index}`} >
 
-              <Text style={styles.something} >
-                  {message}
-                </Text>
+        {/* Below is the button for logging out of the current user */}
+        <View style={styles.logOutPostion}>
+          <View style={styles.logOutBtn}>
 
-              </View>
-            ))}
-</ScrollView>
+            <Button
+              onPress={() => firebase.auth().signOut()}
+              title='Log Out'
+            />
 
-        <ChatFooter />
+          </View>
 
-      </ChatContainer>
+        </View>
+
+
+  <ScrollView style={styles.chatwindowStyle}>
+            {/* sorting out the view */}
+            {this.state.messages.map((message, index) => (
+                <View key={`message-${index}`} >
+
+                <Text style={styles.textViewStyle} >
+                    {message}
+                  </Text>
+
+                </View>
+              ))}
+  </ScrollView>
+
+
+        <View style={styles.inputpostionStyle}>
+
+          <TextInput
+            style={styles.messageInputStyle}
+            placeholder="Type your message"
+             ref={clearChat => this.chattextInput = clearChat}
+             style={styles.textInputStyle}
+             onChangeText={(text) => this.setState({ chat: text })}
+             value={this.state.chat}
+          />
+
+        </View>
+
+
+        {/* This button below when clicked sends data to firebase */}
+        <View style={styles.buttonpostionStyle}>
+          <Button
+            title="send"
+            onPress={() => {
+              alert(firebase.auth().currentUser.email);
+              firebase.database().ref('Room').child('Chat')
+              .push(moment().format('LTS') + ' ' + firebase.auth()
+              .currentUser.email + ':' + ' ' + this.state.chat: text);
+              // .then(this.setState({ chat: '' }));
+              this.chattextInput.setNativeProps({ text: '' });
+          }}
+          />
+        </View>
+
+
+
+        {/* <View style={styles.buttonpostionStyle}>
+                <Button
+                  title="send"
+                  onPress={() => {
+                  firebase.database().ref('Room').child('Chat')
+                  .child(this.props.username)
+                  .push(new Date() + this.state.chat: text);
+                  this.chattextInput.setNativeProps({ text: '' });
+                }}
+                />
+              </View> */}
+
+      </View>
+
     );
   }
 }
+
 
 const styles = {
   buttonpostionStyle: {
@@ -112,23 +160,11 @@ const styles = {
     borderWidth: 1
   },
 
-  something: {
-    flex: 1,
-    flexDirection: 'column' || 'row'
-
-  },
-
   textViewStyle: {
-    // justifyContent: 'center',
-    // flexDirection: 'column',
-    // flex: 1,
-    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    // alignItems: 'center',
-    // flexDirection: 'column',
-    // left: 6
-    backgroundColor: 'red'
+    flexDirection: 'column',
+    left: 6
   },
   logOutPostion: {
     height: 60,

@@ -40,7 +40,9 @@ class ChatFooter extends Component {
             title='send'
             // onPress={this.onButtonPress.bind(this)}
             onPress={() => {
-              firebase.database().ref('Room').child('Chat').push(this.state.chat)
+              alert(firebase.auth().currentUser.email);
+              firebase.database().ref('Room').child('Chat')
+              .push(firebase.auth().currentUser.email + ':' + ' ' +this.state.chat)
               .then(this.setState({ chat: '' }));
           }}
           />
