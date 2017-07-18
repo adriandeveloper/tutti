@@ -23,36 +23,27 @@ export default EStyleSheet.create({
   },
   searchHeaderBox: {
     justifyContent: 'center',
-    // alignItems: 'center',
     height: 80,
-    // position: 'relative',
-    // borderColor: 'red',
-    // borderStyle: 'dotted',
-    // borderWidth: 5,
   },
   chatHeaderContainer: {
-    // elevation: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 60,
-    width: 375,
-    opacity: 0.75,
-    backgroundColor: '$white',
-    // shadowColor: 'rgba(98, 88, 88, 0.3)',
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 2
-    // },
-    // shadowRadius: 8,
-    // shadowOpacity: 1,
-    // position: 'relative',
     top: 10,
+    left: 112,
   },
   chatHeaderText: {
     fontFamily: 'OpenSans',
     fontSize: 14,
     color: '$primaryPink',
     fontWeight: 'bold',
+  },
+  chatWrapper: {
+    height: 60,
+    flexDirection: 'row',
+    top: 15,
+    left: 15,
+  },
+  icon: {
+    top: 8,
+    color: '$primaryPink',
   },
 
 });
