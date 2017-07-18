@@ -30,7 +30,7 @@ class UserSelectionScreen extends Component {
 
           />
         </View>
-
+        
         <View style={styles.createRoomButtonContainer}>
           {/* <Button
             onPress={this.onButtonPress.bind(this)}

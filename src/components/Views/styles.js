@@ -12,5 +12,21 @@ export default EStyleSheet.create({
     flex: 1,
     height: EStyleSheet.hairlinewidth,
     backgroundColor: '$white',
-  }
+  },
+  listItem: {
+  height: 75,
+  alignItems: 'center',
+  justifyContent: 'center'
+},
+leftSwipeItem: {
+  flex: 1,
+  alignItems: 'flex-end',
+  justifyContent: 'center',
+  paddingRight: 20
+},
+rightSwipeItem: {
+  flex: 1,
+  justifyContent: 'center',
+  paddingLeft: 20
+},
 });
