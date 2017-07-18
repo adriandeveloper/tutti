@@ -27,6 +27,7 @@ class ChatFooter extends Component {
           <Button
             style={styles.sendButton}
             title='send'
+            onPress={console.log('test')}
           />
         </View>
       </View>
