@@ -20,16 +20,13 @@ class Chat extends Component {
       const messages = [];
       // const msgSort = [];
       for (const outerKey in msg) {
-        // for (const innerKey in msg[outerKey]) {
-          messages.push(msg[outerKey]);
-          // messages.slice(0 - 16);
-        // }
+        messages.push(msg[outerKey]);
       }
 
       console.log(messages.sort((a, b) => {
-        if (a < b) {
+        if (a.time < b.time) {
           return -1;
-        } else if (a > b) {
+        } else if (a.time > b.time) {
           return 1;
         }
 
@@ -67,8 +64,14 @@ class Chat extends Component {
                 <View key={`message-${index}`} >
 
                 <Text style={styles.textViewStyle} >
-                    {message}
+                    {message.email}: {message.text} {message.time}
                   </Text>
+                  {/* <Text style={styles.textViewStyle} >
+                      {message.email}
+                    </Text> */}
+                    {/* <Text style={styles.textViewStyle} >
+                        {message.time}
+                      </Text> */}
 
                 </View>
               ))}
@@ -94,16 +97,18 @@ class Chat extends Component {
           <Button
             title="send"
             onPress={() => {
-              alert(firebase.auth().currentUser.email);
+              // alert(firebase.auth().currentUser.email);
               firebase.database().ref('Room').child('Chat')
-              .push(moment().format('LTS') + ' ' + firebase.auth()
-              .currentUser.email + ':' + ' ' + this.state.chat: text);
+              .push({
+                email: firebase.auth().currentUser.email,
+                text: this.state.chat,
+                time: moment().format('LTS')
+              });
               // .then(this.setState({ chat: '' }));
               this.chattextInput.setNativeProps({ text: '' });
           }}
           />
         </View>
-
 
 
         {/* <View style={styles.buttonpostionStyle}>
