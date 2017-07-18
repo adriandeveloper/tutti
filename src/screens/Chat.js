@@ -104,12 +104,8 @@ const styles = EStyleSheet.create({
     left: 6
   },
   messageInputStyle: {
-    // height: 17,
-    // opacity: 0.64,
-    // color: '#008AD8',
     fontFamily: 'OpenSans',
     fontSize: 14,
-    // lineheight: 17
   },
   textInputStyle: {
     height: 40,
@@ -117,15 +113,10 @@ const styles = EStyleSheet.create({
     borderWidth: 1
   },
   chatboxContainer: {
-    borderRadius: 4,
-    width: 224,
     backgroundColor: 'rgb(0,138,216)',
   },
 
   something: {
-    // flex: 1,
-    // flexDirection: 'column' || 'row'
-
   },
 
   textViewStyle: {
