@@ -5,7 +5,7 @@ import styles from './styles';
 
 const MessageScreen = () => (
   <ScrollView style={styles.messageWindow}>
-    <Text>Message</Text>
+    <Text>yellow</Text>
   </ScrollView>
 );
 
