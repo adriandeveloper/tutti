@@ -5,7 +5,7 @@ import styles from './styles';
 
 const ChatHeader = () => (
   <View style={styles.chatHeaderContainer}>
-    <Text>Test</Text>
+    <Text>Tutti App</Text>
   </View>
 
   );

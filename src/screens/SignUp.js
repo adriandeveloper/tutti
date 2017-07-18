@@ -18,14 +18,14 @@ import {
 
 
 class SignUp extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       username: '',
       email: '',
       password: '',
       confirmPassword: ''
-    }
+    };
   }
   onUserChangeSU(text) {
     this.setState({

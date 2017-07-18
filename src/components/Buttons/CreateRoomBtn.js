@@ -70,6 +70,10 @@ class CreateRoomBtn extends Component {
 
 
   onPressButton() {
+    // firebase.auth().onAuthStateChanged(() => {
+    //     const curUser = firebase.auth().currentUser.email;
+    //     firebase.database().ref('New Users').push(curUser);
+    // });
     Actions.auth();
   }
 
