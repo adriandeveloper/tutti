@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { StatusBar, ScrollView, Text, View } from 'react-native';
 import firebase from 'firebase';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import { ChatContainer } from '../components/Containers';
 // import { MessageScreen } from '../components/Views';
 import { ChatHeader } from '../components/Header';
 import { ChatFooter } from '../components/Footer';
 // import styles from '../components/Views/styles.js';
+
 class Chat extends Component {
 
   constructor(props) {
@@ -60,15 +62,18 @@ class Chat extends Component {
         <ScrollView style={styles.chatwindowStyle}>
           {/* sorting out the view */}
           {this.state.messages.map((message, index) => (
-              <View key={`message-${index}`} >
+            <View key={`message-${index}`} >
 
-              <Text style={styles.something} >
+              <View style={styles.chatboxContainer}>
+                <Text style={styles.something} >
                   {message}
                 </Text>
-
               </View>
-            ))}
-</ScrollView>
+
+
+            </View>
+          ))}
+        </ScrollView>
 
         <ChatFooter />
 
@@ -77,7 +82,7 @@ class Chat extends Component {
   }
 }
 
-const styles = {
+const styles = EStyleSheet.create({
   buttonpostionStyle: {
     bottom: 15,
     alignItems: 'flex-end',
@@ -87,9 +92,9 @@ const styles = {
     width: 60,
   },
   chatwindowStyle: {
-      backgroundColor: '#f0f8ff',
+      backgroundColor: '$white',
       height: 550,
-      top: 5,
+      // top: 5,
     },
   inputpostionStyle: {
     alignItems: 'flex-end',
@@ -99,35 +104,34 @@ const styles = {
     left: 6
   },
   messageInputStyle: {
-    height: 17,
-    opacity: 0.64,
-    color: '#008AD8',
-    fontfamily: 'Lucida Grande',
-    fontsize: 14,
-    lineheight: 17
+    // height: 17,
+    // opacity: 0.64,
+    // color: '#008AD8',
+    fontFamily: 'OpenSans',
+    fontSize: 14,
+    // lineheight: 17
   },
   textInputStyle: {
     height: 40,
     borderColor: 'gray',
     borderWidth: 1
   },
+  chatboxContainer: {
+    borderRadius: 4,
+    width: 224,
+    backgroundColor: 'rgb(0,138,216)',
+  },
 
   something: {
-    flex: 1,
-    flexDirection: 'column' || 'row'
+    // flex: 1,
+    // flexDirection: 'column' || 'row'
 
   },
 
   textViewStyle: {
-    // justifyContent: 'center',
-    // flexDirection: 'column',
-    // flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    // alignItems: 'center',
-    // flexDirection: 'column',
-    // left: 6
     backgroundColor: 'red'
   },
   logOutPostion: {
@@ -148,6 +152,6 @@ const styles = {
     top: 20
   }
 
-};
+});
 
 export default Chat;
