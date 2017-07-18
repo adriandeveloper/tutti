@@ -52,13 +52,23 @@ export default EStyleSheet.create({
     // borderWidth: 5,
   },
   messageInputContainer: {
-    width: 255,
+    width: 275,
     height: 50,
     justifyContent: 'center',
     alignItems: 'center',
     // borderColor: 'red',
     // borderStyle: 'dotted',
     // borderWidth: 5,
+    paddingLeft: 10,
+  },
+  sendIcon: {
+    color: '$primaryPink',
+  },
+  sendIconContainer: {
+    // borderColor: 'pink',
+    // borderStyle: 'dotted',
+    // borderWidth: 5,
+    marginRight: 40,
 
   },
 });

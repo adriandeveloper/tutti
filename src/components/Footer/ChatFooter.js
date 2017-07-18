@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Button, View, TextInput } from 'react-native';
+import { TouchableOpacity, Button, View, TextInput } from 'react-native';
 import firebase from 'firebase';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import styles from './styles';
 
 class ChatFooter extends Component {
@@ -28,22 +30,39 @@ class ChatFooter extends Component {
         <View style={styles.messageInputContainer}>
           <TextInput
             style={styles.messageInput}
-            placeholder='Type your message'
+            placeholder='say something cool'
             onChangeText={(text) => this.setState({ chat: text })}
             value={this.state.chat}
           />
         </View>
 
         <View style={styles.sendButtonContainer}>
-          <Button
+          {/* <Button
             style={styles.sendButton}
             title='send'
             // onPress={this.onButtonPress.bind(this)}
             onPress={() => {
               firebase.database().ref('Room').child('Chat').push(this.state.chat)
               .then(this.setState({ chat: '' }));
-          }}
-          />
+            }}
+          /> */}
+          <TouchableOpacity
+            style={styles.sendButton}
+            // title='send'
+            // onPress={this.onButtonPress.bind(this)}
+            onPress={() => {
+              firebase.database().ref('Room').child('Chat').push(this.state.chat)
+              .then(this.setState({ chat: '' }));
+            }}
+          >
+            <View style={styles.sendIconContainer}>
+              <Icon
+                name='md-send'
+                size={25}
+                style={styles.sendIcon}
+              />
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
 
