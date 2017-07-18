@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ListView } from 'react-native';
+import Checkbox from 'react-native-checkbox';
 import styles from './styles';
 
 class UserSelection extends Component {
@@ -12,11 +13,21 @@ class UserSelection extends Component {
     };
   }
 
+  // const leftText = data.name;
+
   render() {
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={(data) => <View><Text>{data}</Text></View>}
+        renderRow={(data) => <View>
+          <Text>
+            <Checkbox
+              label='label'
+              checked
+            />
+              {data}
+          </Text>
+        </View>}
         renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
       />
     );
