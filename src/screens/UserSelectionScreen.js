@@ -30,7 +30,7 @@ class UserSelectionScreen extends Component {
 
           />
         </View>
-        
+
         <View style={styles.createRoomButtonContainer}>
           {/* <Button
             onPress={this.onButtonPress.bind(this)}
@@ -76,18 +76,26 @@ const styles = EStyleSheet.create({
 },
   renderRowContainer: {
   },
-  createRoomText: {},
+  createRoomText: {
+    fontFamily: 'OpenSans',
+    fontSize: 20,
+    height: 27,
+    color: '$white',
+  },
   textContainer: {},
   createRoomButton: {
-    // borderRadius: 3,
-    height: 54,
-    width: 237,
+    width: 194,
+    height: 34,
+    borderRadius: 5,
     backgroundColor: '$primaryPink',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 8,
   },
   createRoomButtonContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    zIndex: 2,
+    bottom: 35,
   },
 });
 

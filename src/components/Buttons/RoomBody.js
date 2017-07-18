@@ -19,15 +19,24 @@ class RoomBody extends Component {
 
   render() {
     return (
+
+      <View>
+        <View>
+          <Text style={styles.yourRoomTxt}>your rooms</Text>
+        </View>
+
+        <View>
           <TouchableOpacity
             style={styles.roomImageContainer}
             onPress={this.onButtonPressed.bind(this)}
           >
             <Image
               style={styles.roomImage}
-              source={{uri: 'https://image.ibb.co/hrroSv/room_6.png' }}
+              source={{ uri: 'https://image.ibb.co/hrroSv/room_6.png' }}
             />
           </TouchableOpacity>
+        </View>
+      </View>
     );
   }
 }

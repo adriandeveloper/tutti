@@ -175,7 +175,7 @@ class CreateRoomBtn extends Component {
             style={styles.createRoomButton}
             onPress={this.onButtonPressed.bind(this)}
           >
-            <Text style={styles.createRoomText}>Add People to Chat With</Text>
+            <Text style={styles.createRoomText}>Add Users</Text>
           </TouchableOpacity>
         </View>
 
