@@ -131,6 +131,7 @@ export default EStyleSheet.create({
     height: 400,
     borderRadius: 3,
     backgroundColor: '$white',
+    zIndex: 2,
   },
   roomContainer: {
     top: 40,
@@ -187,6 +188,7 @@ export default EStyleSheet.create({
     // borderWidth: 1,
     // borderColor: '#979797',
     left: 24,
+    zIndex: 1,
   },
   yourRoomTxt: {
     fontFamily: 'OpenSans',
@@ -194,6 +196,7 @@ export default EStyleSheet.create({
     left: 24,
     bottom: 18,
     color: '$primaryPink',
+    zIndex: 1,
   },
 
 

@@ -17,6 +17,7 @@ class UserSelection extends Component {
       <ListView
         dataSource={this.state.dataSource}
         renderRow={(data) => <View><Text>{data}</Text></View>}
+        renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
       />
     );
   }
