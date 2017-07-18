@@ -172,6 +172,19 @@ export default EStyleSheet.create({
     fontWeight: '300',
     textAlign: 'center',
   },
+  roomImage: {
+    width: 90,
+    height: 124,
+    // borderStyle: 'solid',
+    // borderColor: '#fff',
+    // borderWidth: 1,
+  },
+  roomImageContainer: {
+    // borderStyle: 'solid',
+    // borderWidth: 1,
+    // borderColor: '#979797',
+    left: 24,
+  },
 
 
 });

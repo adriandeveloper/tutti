@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ListView, Button } from 'react-native';
+import { View, Text, TouchableOpacity, ListView, Button } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Actions } from 'react-native-router-flux';
 // import styles from './styles';
@@ -15,7 +15,7 @@ class UserSelectionScreen extends Component {
   }
 
   onButtonPress = () => {
-    Actions.roomScreen();
+    Actions.roomScreen2();
   }
 
 
@@ -30,13 +30,23 @@ class UserSelectionScreen extends Component {
 
           />
         </View>
-
-        <View style={styles.confirmBtn}>
-          <Button
+        
+        <View style={styles.createRoomButtonContainer}>
+          {/* <Button
             onPress={this.onButtonPress.bind(this)}
             title='Back'
             color='#fff'
-          />
+          /> */}
+          <TouchableOpacity
+            // onPress={() => alert('puff')}
+            onPress={this.onButtonPress.bind(this)}
+            resizeMode="contain"
+            style={styles.createRoomButton}
+          >
+            <View style={styles.textContainer}>
+              <Text style={styles.createRoomText}>Create Room</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -65,8 +75,19 @@ const styles = EStyleSheet.create({
     bottom: 30,
 },
   renderRowContainer: {
-
-
+  },
+  createRoomText: {},
+  textContainer: {},
+  createRoomButton: {
+    // borderRadius: 3,
+    height: 54,
+    width: 237,
+    backgroundColor: '$primaryPink',
+  },
+  createRoomButtonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 2,
   },
 });
 

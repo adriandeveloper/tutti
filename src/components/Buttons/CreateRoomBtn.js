@@ -154,28 +154,28 @@ class CreateRoomBtn extends Component {
           />
         </View>
 
-        <View style={styles.addFriendsContainer}>
+        {/* <View style={styles.addFriendsContainer}>
           <Text style={styles.addFriendsAndImageText}>add friends</Text>
           <TouchableOpacity
             style={styles.addFriendsButton}
             onPress={this.onButtonPressed.bind(this)}
           >
             <View style={styles.addFriendsButtonContainer}>
-              <Icon
-                name='ios-add'
-                size={20}
-                style={styles.icon2}
-              />
+          <Icon
+          name='ios-add'
+          size={20}
+          style={styles.icon2}
+          />
             </View>
           </TouchableOpacity>
-        </View>
+        </View> */}
 
         <View style={styles.createRoomButtonContainer}>
           <TouchableOpacity
             style={styles.createRoomButton}
-            onPress={this.onButtonPress.bind(this)}
+            onPress={this.onButtonPressed.bind(this)}
           >
-              <Text style={styles.createRoomText}>CREATE ROOM</Text>
+            <Text style={styles.createRoomText}>Add People to Chat With</Text>
           </TouchableOpacity>
         </View>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Scene, Router } from 'react-native-router-flux';
-import { Login, Rooms, Chat, SignUp, UserSelectionScreen } from './screens';
+import { Login, Rooms, Chat, SignUp, UserSelectionScreen, RoomPopulate } from './screens';
 
 // const prevGetStateForAction = Homestack.router.getStateForAction;
 // HomeStack.router = {
@@ -31,7 +31,10 @@ const RouterComponent = () => (
 
     <Scene key='roomScreen'>
       <Scene key="Rooms" component={Rooms} hideNavBar />
-      {/* <Scene key="Chat" component={Chat} hideNavBar /> */}
+    </Scene>
+
+    <Scene key='roomScreen2'>
+      <Scene key="RoomPopulate" component={RoomPopulate} hideNavBar />
     </Scene>
 
     <Scene key='chatScreen'>
