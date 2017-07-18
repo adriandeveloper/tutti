@@ -5,7 +5,7 @@ import styles from './styles';
 
 const ChatHeader = () => (
   <View style={styles.chatHeaderContainer}>
-    <Text>Tutti App</Text>
+    <Text style={styles.chatHeaderText}>Capstone Chat</Text>
   </View>
 
   );

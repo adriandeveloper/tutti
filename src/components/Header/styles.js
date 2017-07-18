@@ -38,14 +38,21 @@ export default EStyleSheet.create({
     width: 375,
     opacity: 0.75,
     backgroundColor: '$white',
-    shadowColor: 'rgba(98, 88, 88, 0.3)',
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowRadius: 8,
-    shadowOpacity: 1,
-    position: 'relative',
+    // shadowColor: 'rgba(98, 88, 88, 0.3)',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 2
+    // },
+    // shadowRadius: 8,
+    // shadowOpacity: 1,
+    // position: 'relative',
+    top: 10,
+  },
+  chatHeaderText: {
+    fontFamily: 'OpenSans',
+    fontSize: 14,
+    color: '$primaryPink',
+    fontWeight: 'bold',
   },
 
 });
