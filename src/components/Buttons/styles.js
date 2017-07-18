@@ -44,6 +44,8 @@ export default EStyleSheet.create({
     height: 34,
     borderRadius: 5,
     backgroundColor: '$primaryPink',
+    justifyContent: 'center',
+    alignItems: 'center',
     margin: 8,
   },
   createRoomHeaderContainer: {
@@ -57,9 +59,10 @@ export default EStyleSheet.create({
     fontWeight: '600',
   },
   createRoomText: {
-    textAlign: 'center',
+    // textAlign: 'center',
     fontFamily: 'OpenSans',
     fontSize: 20,
+    height: 27,
     color: '$white',
 
   },
@@ -125,7 +128,7 @@ export default EStyleSheet.create({
   },
   modal: {
     width: 308,
-    height: 469,
+    height: 400,
     borderRadius: 3,
     backgroundColor: '$white',
   },
@@ -184,6 +187,13 @@ export default EStyleSheet.create({
     // borderWidth: 1,
     // borderColor: '#979797',
     left: 24,
+  },
+  yourRoomTxt: {
+    fontFamily: 'OpenSans',
+    fontSize: 19,
+    left: 24,
+    bottom: 18,
+    color: '$primaryPink',
   },
 
 
