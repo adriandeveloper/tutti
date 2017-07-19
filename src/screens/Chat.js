@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { View, TextInput, Text, Button, ScrollView } from 'react-native';
 import firebase from 'firebase';
+import Icon from 'react-native-vector-icons/Ionicons';
 import moment from 'moment';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 class Chat extends Component {
 
@@ -58,24 +60,24 @@ class Chat extends Component {
         </View>
 
 
-  <ScrollView style={styles.chatwindowStyle}>
-            {/* sorting out the view */}
-            {this.state.messages.map((message, index) => (
-                <View key={`message-${index}`} >
+        <ScrollView style={styles.chatwindowStyle}>
+          {/* sorting out the view */}
+          {this.state.messages.map((message, index) => (
+            <View key={`message-${index}`} >
 
-                <Text style={styles.textViewStyle} >
-                    {message.email}: {message.text} {message.time}
-                  </Text>
-                  {/* <Text style={styles.textViewStyle} >
-                      {message.email}
-                    </Text> */}
-                    {/* <Text style={styles.textViewStyle} >
-                        {message.time}
-                      </Text> */}
+              <Text style={styles.textViewStyle} >
+                {message.email}: {message.text} {message.time}
+              </Text>
+              {/* <Text style={styles.textViewStyle} >
+                {message.email}
+              </Text> */}
+              {/* <Text style={styles.textViewStyle} >
+                {message.time}
+              </Text> */}
 
-                </View>
-              ))}
-  </ScrollView>
+            </View>
+          ))}
+        </ScrollView>
 
 
         <View style={styles.inputpostionStyle}>
@@ -83,10 +85,10 @@ class Chat extends Component {
           <TextInput
             style={styles.messageInputStyle}
             placeholder="Type your message"
-             ref={clearChat => this.chattextInput = clearChat}
-             style={styles.textInputStyle}
-             onChangeText={(text) => this.setState({ chat: text })}
-             value={this.state.chat}
+            ref={clearChat => this.chattextInput = clearChat}
+            style={styles.textInputStyle}
+            onChangeText={(text) => this.setState({ chat: text })}
+            value={this.state.chat}
           />
 
         </View>
@@ -106,22 +108,9 @@ class Chat extends Component {
               });
               // .then(this.setState({ chat: '' }));
               this.chattextInput.setNativeProps({ text: '' });
-          }}
+            }}
           />
         </View>
-
-
-        {/* <View style={styles.buttonpostionStyle}>
-                <Button
-                  title="send"
-                  onPress={() => {
-                  firebase.database().ref('Room').child('Chat')
-                  .child(this.props.username)
-                  .push(new Date() + this.state.chat: text);
-                  this.chattextInput.setNativeProps({ text: '' });
-                }}
-                />
-              </View> */}
 
       </View>
 
@@ -130,7 +119,7 @@ class Chat extends Component {
 }
 
 
-const styles = {
+const styles = EStyleSheet.create({
   buttonpostionStyle: {
     bottom: 15,
     alignItems: 'flex-end',
@@ -140,8 +129,8 @@ const styles = {
     width: 60,
   },
   chatwindowStyle: {
-      backgroundColor: '#f0f8ff',
-      height: 550,
+      backgroundColor: '$white',
+      height: 519,
       top: 5,
     },
   inputpostionStyle: {
@@ -155,9 +144,9 @@ const styles = {
     height: 17,
     opacity: 0.64,
     color: '#008AD8',
-    fontfamily: 'Lucida Grande',
-    fontsize: 14,
-    lineheight: 17
+    fontFamily: 'Lucida Grande',
+    fontSize: 14,
+    lineHeight: 17
   },
   textInputStyle: {
     height: 40,
@@ -189,6 +178,6 @@ const styles = {
     top: 20
   }
 
-};
+});
 
 export default Chat;
