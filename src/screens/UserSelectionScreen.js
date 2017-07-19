@@ -6,12 +6,15 @@ import { Actions } from 'react-native-router-flux';
 // import styles from './styles';
 
 class UserSelectionScreen extends Component {
+
   constructor(props) {
     super(props);
 
+    const emails = ['noni@test.com', 'frank@frankg.com', 'zfredrick@bank.net', 'alexThomas@ourlook.com'];
+
     const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
-      dataSource: ds.cloneWithRows(['row 1', 'row 2']),
+      dataSource: ds.cloneWithRows(emails),
     };
   }
 
@@ -73,7 +76,7 @@ const styles = EStyleSheet.create({
   listViewStyle: {
     color: '$white',
     fontFamily: 'OpenSans',
-    fontSize: 24,
+    fontSize: 19,
   },
   confirmBtn: {
     justifyContent: 'center',
