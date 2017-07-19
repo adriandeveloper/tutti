@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ListView, Button } from 'react-native';
+import CheckBox from 'react-native-check-box';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Actions } from 'react-native-router-flux';
 // import styles from './styles';
@@ -18,6 +19,9 @@ class UserSelectionScreen extends Component {
     Actions.roomScreen();
   }
 
+  onClick = () => {
+    console.log('clicked');
+  }
 
   render() {
     return (
@@ -25,7 +29,19 @@ class UserSelectionScreen extends Component {
         <View style={styles.listViewStyleContainer}>
           <ListView
             dataSource={this.state.dataSource}
-            renderRow={(data) => <View style={styles.renderRowContainer}><Text style={styles.listViewStyle}>{data}</Text></View>}
+            renderRow={(data) => <View style={styles.renderRowContainer}>
+              <View style={styles.checkboxContainer}>
+                <CheckBox
+                  onClick={() => this.onClick()}
+                  isChecked={data.checked}
+                  style={styles.checkBoxStyle}
+                  checkdColor
+                  uncheckedColor
+                />
+              </View>
+              <Text style={styles.listViewStyle}>{data}</Text>
+            </View>
+            }
 
 
           />
@@ -65,9 +81,16 @@ const styles = EStyleSheet.create({
     bottom: 30,
 },
   renderRowContainer: {
-
-
+    flexDirection: 'row',
+    alignItems: 'center'
   },
+  checkboxContainer: {
+    top: 3,
+    marginRight: 4,
+  },
+  // checkBoxStyle: {
+  //   color: '#fff',
+  // }
 });
 
 
