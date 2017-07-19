@@ -4,7 +4,9 @@ export default EStyleSheet.create({
   container: {
     alignItems: 'center',
   },
-  gettingStartedContainer: {},
+  gettingStartedContainer: {
+    top: 20,
+  },
   gettingStartedText: {
     fontFamily: 'Open Sans',
     fontSize: 23,
@@ -12,7 +14,7 @@ export default EStyleSheet.create({
     color: '$textColor',
   },
   textTitleContainer: {
-    marginVertical: '7.5%',
+      top: 30,
   },
   titleFont: {
     fontFamily: 'Open Sans',

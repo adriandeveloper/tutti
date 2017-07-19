@@ -6,7 +6,7 @@ export default EStyleSheet.create({
     alignItems: 'center',
   },
   signUpContainer: {
-    backgroundColor: '$primaryPink',
+    backgroundColor: '#b19cd9',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
