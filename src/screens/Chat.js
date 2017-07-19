@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, Text, Button, ScrollView } from 'react-native';
+import { StatusBar, View, TextInput, Text, Button, ScrollView, TouchableOpacity } from 'react-native';
 import firebase from 'firebase';
 import Icon from 'react-native-vector-icons/Ionicons';
 import moment from 'moment';
@@ -13,6 +13,8 @@ class Chat extends Component {
     messages: []
 
    };
+
+
 
     // displaying the data from firebase
     firebase.database().ref('Room').child('Chat').on('value', (snapshot) => {
@@ -42,21 +44,31 @@ class Chat extends Component {
   render() {
     return (
 
-
       <View>
+        <View>
+          <StatusBar
+            translucent={false}
+            barStyle='default'
+          />
+        </View>
 
 
         {/* Below is the button for logging out of the current user */}
-        <View style={styles.logOutPostion}>
-          <View style={styles.logOutBtn}>
+        <View style={styles.headerWrapper}>
 
-            <Button
-              onPress={() => firebase.auth().signOut()}
-              title='Log Out'
-            />
-
+          <View style={styles.iconContainer}>
+            <TouchableOpacity >
+              <Icon
+                name='ios-arrow-back'
+                size={30}
+                style={styles.icon}
+              />
+            </TouchableOpacity>
           </View>
 
+          <View style={styles.chatRoomTitleContainer}>
+            <Text style={styles.chatRoomTitleText}>Capstone Chat</Text>
+          </View>
         </View>
 
 
@@ -68,12 +80,6 @@ class Chat extends Component {
               <Text style={styles.textViewStyle} >
                 {message.email}: {message.text} {message.time}
               </Text>
-              {/* <Text style={styles.textViewStyle} >
-                {message.email}
-              </Text> */}
-              {/* <Text style={styles.textViewStyle} >
-                {message.time}
-              </Text> */}
 
             </View>
           ))}
@@ -84,18 +90,42 @@ class Chat extends Component {
 
           <TextInput
             style={styles.messageInputStyle}
-            placeholder="Type your message"
+            placeholder="say something cool"
             ref={clearChat => this.chattextInput = clearChat}
             style={styles.textInputStyle}
             onChangeText={(text) => this.setState({ chat: text })}
             value={this.state.chat}
           />
 
+          <View style={styles.sendButtonContainer}>
+            <TouchableOpacity
+              style={styles.sendButton}
+              onPress={() => {
+                // alert(firebase.auth().currentUser.email);
+                firebase.database().ref('Room').child('Chat')
+                .push({
+                  email: firebase.auth().currentUser.email,
+                  text: this.state.chat,
+                  time: moment().format('LTS')
+                });
+                // .then(this.setState({ chat: '' }));
+                this.chattextInput.setNativeProps({ text: '' });
+              }}
+              >
+                <View style={styles.sendIconContainer}>
+                  <Icon
+                    name='md-send'
+                    size={25}
+                    style={styles.sendIcon}
+                  />
+                </View>
+              </TouchableOpacity>
+            </View>
         </View>
 
 
         {/* This button below when clicked sends data to firebase */}
-        <View style={styles.buttonpostionStyle}>
+        {/* <View style={styles.buttonpostionStyle}>
           <Button
             title="send"
             onPress={() => {
@@ -110,7 +140,10 @@ class Chat extends Component {
               this.chattextInput.setNativeProps({ text: '' });
             }}
           />
-        </View>
+
+
+        </View> */}
+
 
       </View>
 
@@ -160,23 +193,47 @@ const styles = EStyleSheet.create({
     flexDirection: 'column',
     left: 6
   },
-  logOutPostion: {
+  headerWrapper: {
     height: 60,
-    width: 375,
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: '#ddd',
-    borderBottomWidth: 0,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 2,
-    elevation: 1
+    // borderWidth: 1,
+    // borderRadius: 2,
+    // borderColor: '#ddd',
+    // borderBottomWidth: 0,
+    // shadowColor: '#000',
+    // shadowOffset: { width: 0, height: 2 },
+    // shadowOpacity: 0.5,
+    // shadowRadius: 2,
+    elevation: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   logOutBtn: {
     right: 150,
     top: 20
-  }
+  },
+  icon: {
+    color: 'rgb(246, 0, 104)',
+
+  },
+  iconContainer: {
+    marginTop: 20,
+    left: 10,
+  },
+  chatRoomTitleText: {
+    color: 'rgb(246, 0, 104)',
+    fontFamily: 'OpenSans',
+    fontSize: 18,
+    fontWeight: '400',
+  },
+  chatRoomTitleContainer: {
+    marginTop: 20,
+    right: 120,
+    flexDirection: 'column',
+  },
+  sendButtonContainer: {
+    // left: 50,
+  },
+
 
 });
 
