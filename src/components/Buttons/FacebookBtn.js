@@ -10,7 +10,17 @@ const FacebookBtn = (props) => (
          resizeMode='contain'
        >
            <View style={styles.textContainer}>
-             <Text style={styles.textFont}>{props.buttonText}</Text>
+
+            <View style={styles.facebookIconContainer}>
+              <Icon
+                name='facebook-official'
+                size={20}
+                style={styles.facebookIcon}
+              />
+          </View>
+             <View style={styles.textFontContainer}>
+               <Text style={styles.textFont}>{props.buttonText}</Text>
+              </View>
            </View>
          </TouchableOpacity>
         <View style={styles.FacebookButtonContainerShadow} />

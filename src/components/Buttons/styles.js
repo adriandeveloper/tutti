@@ -168,6 +168,9 @@ export default EStyleSheet.create({
   },
   textContainer: {
     marginTop: 18,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   textFont: {
     color: '$white',
@@ -197,6 +200,17 @@ export default EStyleSheet.create({
     bottom: 18,
     color: '$primaryPink',
     zIndex: 1,
+  },
+  facebookIcon: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  facebookIconContainer: {
+    right: 10,
+  },
+  textFontContainer: {
+  },
+  buttonText: {
   },
 
 
