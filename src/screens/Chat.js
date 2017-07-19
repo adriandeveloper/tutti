@@ -75,24 +75,42 @@ class Chat extends Component {
         <ScrollView style={styles.chatwindowStyle}>
           {/* sorting out the view */}
           {this.state.messages.map((message, index) => (
-            <View key={`message-${index}`} >
+            <View
+              style={styles.chatWrapper}
+              key={`message-${index}`}
+            >
 
-              <Text style={styles.textViewStyle} >
-                {message.email}: {message.text} {message.time}
+              <View style={styles.messageEmailContainer}>
+              <Text style={styles.messageEmailText} >
+                {message.email}
               </Text>
+            </View>
+
+              <View style={[styles.messageTextContainer, styles.messageTextShadow]}>
+                <View style={styles.messageTextFix}>
+                  <Text style={styles.messageText} >
+                    {message.text}
+                  </Text>
+
+                </View>
+            </View>
+              <View style={styles.messageTimeContainer}>
+              <Text style={styles.messageTimeText} >
+                {message.time}
+              </Text>
+            </View>
 
             </View>
           ))}
         </ScrollView>
 
 
-        <View style={styles.inputpostionStyle}>
+        <View style={styles.messageContainer}>
 
           <TextInput
-            style={styles.messageInputStyle}
             placeholder="say something cool"
             ref={clearChat => this.chattextInput = clearChat}
-            style={styles.textInputStyle}
+            style={styles.inputText}
             onChangeText={(text) => this.setState({ chat: text })}
             value={this.state.chat}
           />
@@ -163,53 +181,29 @@ const styles = EStyleSheet.create({
   },
   chatwindowStyle: {
       backgroundColor: '$white',
-      height: 519,
+      height: 564,
       top: 5,
+      // justifyContent: 'center',
+      // alignItems: 'center',
     },
-  inputpostionStyle: {
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
-    width: 300,
-    top: 10,
-    left: 6
-  },
-  messageInputStyle: {
-    height: 17,
-    opacity: 0.64,
-    color: '#008AD8',
-    fontFamily: 'Lucida Grande',
-    fontSize: 14,
-    lineHeight: 17
-  },
-  textInputStyle: {
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1
+  messageContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 
-  textViewStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-    left: 6
+  inputText: {
+    height: 40,
+    width: 289,
+    left: 6,
   },
+
   headerWrapper: {
     height: 60,
-    // borderWidth: 1,
-    // borderRadius: 2,
-    // borderColor: '#ddd',
-    // borderBottomWidth: 0,
-    // shadowColor: '#000',
-    // shadowOffset: { width: 0, height: 2 },
-    // shadowOpacity: 0.5,
-    // shadowRadius: 2,
     elevation: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-  logOutBtn: {
-    right: 150,
-    top: 20
+
   },
   icon: {
     color: 'rgb(246, 0, 104)',
@@ -231,10 +225,71 @@ const styles = EStyleSheet.create({
     flexDirection: 'column',
   },
   sendButtonContainer: {
-    // left: 50,
   },
+  sendIcon: {
+    color: 'rgb(246, 0, 104)',
+  },
+  sendIconContainer: {
+    right: 32,
+  },
+  messageTimeContainer: {
+    alignSelf: 'flex-end',
+    bottom: 119,
+    right: 60,
+  },
+  messageTimeText: {
+    color: '#f60068',
+  },
+  messageEmailContainer: {
+    left: 40,
+  },
+  messageEmailText: {
+    fontFamily: 'OpenSans',
+    color: '#008ad8',
+  },
+  messageTextContainer: {
+    width: 244,
+    height: 101,
+    // borderRadius: 4,
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 4,
+    borderBottomLeftRadius: 4,
+    borderBottomRightRadius: 4,
+    backgroundColor: '#fff',
+    left: 63,
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: 'rgba(46, 145, 215, 0.33)',
+  },
+  messageTextShadow: {
+    width: 260,
+    height: 101,
+    borderRadius: 4,
+    shadowColor: 'rgba(46, 145, 215, 0.33)',
+    shadowOffset: {
+      width: 0,
+      height: 5
+    },
+    shadowRadius: 4,
+    shadowOpacity: 1
+  },
+  messageText: {
+      // justifyContent: 'center',
+      // alignItems: 'center',
+      // textAlign: 'justify',
+      color: '#3c539a',
+      // flexDirection: 'column',
+      fontFamily: 'OpenSans',
+      fontSize: 14,
 
-
+    },
+    messageTextFix: {
+      justifyContent: 'space-between',
+      alignSelf: 'center',
+    },
+  chatWrapper: {
+  },
 });
 
 export default Chat;
