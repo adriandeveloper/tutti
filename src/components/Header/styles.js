@@ -5,11 +5,11 @@ export default EStyleSheet.create({
     alignItems: 'center',
   },
   gettingStartedContainer: {
-    top: 20,
+    top: 32,
   },
   gettingStartedText: {
     fontFamily: 'Open Sans',
-    fontSize: 23,
+    fontSize: 20,
     fontWeight: '300',
     color: '$textColor',
   },

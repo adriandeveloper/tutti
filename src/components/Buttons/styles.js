@@ -59,12 +59,10 @@ export default EStyleSheet.create({
     fontWeight: '600',
   },
   createRoomText: {
-    // textAlign: 'center',
     fontFamily: 'OpenSans',
     fontSize: 20,
     height: 27,
     color: '$white',
-
   },
   FacebookButtonContainerShadow: {
     shadowColor: 'rgba(55,77,144,0.4)',
@@ -84,7 +82,6 @@ export default EStyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 2,
-    // top: 15,
   },
   headerButtonsContainer: {
     flexDirection: 'row',
@@ -137,7 +134,6 @@ export default EStyleSheet.create({
     top: 40,
     width: 192,
     left: 58,
-
   },
   roomDescInput: {
     height: 33,
@@ -146,8 +142,6 @@ export default EStyleSheet.create({
     height: 33,
   },
   textHeadersContainer: {
-
-    // marginVertical: -30,
     marginTop: -50,
     top: 300,
   },
@@ -157,7 +151,6 @@ export default EStyleSheet.create({
     fontWeight: '300',
     textAlign: 'center',
     color: '#777577',
-
   },
   textSubHeader: {
     fontFamily: 'OpenSans',
@@ -182,14 +175,8 @@ export default EStyleSheet.create({
   roomImage: {
     width: 90,
     height: 124,
-    // borderStyle: 'solid',
-    // borderColor: '#fff',
-    // borderWidth: 1,
   },
   roomImageContainer: {
-    // borderStyle: 'solid',
-    // borderWidth: 1,
-    // borderColor: '#979797',
     left: 24,
     zIndex: 1,
   },
@@ -208,10 +195,4 @@ export default EStyleSheet.create({
   facebookIconContainer: {
     right: 10,
   },
-  textFontContainer: {
-  },
-  buttonText: {
-  },
-
-
 });

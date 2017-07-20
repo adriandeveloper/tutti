@@ -10,7 +10,7 @@ class UserSelectionScreen extends Component {
   constructor(props) {
     super(props);
 
-    const emails = ['noni@test.com', 'frank@frankg.com', 'zfredrick@bank.net', 'alexThomas@ourlook.com'];
+    const emails = ['noni@tutti.com', 'harry.potter@hogwarts.com', 'captainpicard@enterprise.net', 'alexThomas@ourlook.com'];
 
     const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {

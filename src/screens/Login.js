@@ -33,7 +33,7 @@ onButtonPress() {
           translucent={false} barStyle='default'
         />
         <Header
-          headerText="Let's Get Started"
+          headerText="Say Something Cool"
         />
 
         <ScrollView style={styles.inputFieldContainer}>
